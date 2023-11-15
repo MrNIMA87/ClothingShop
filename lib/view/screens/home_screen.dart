@@ -1,3 +1,5 @@
+import 'package:clothing_shop/theme/colors/my_colors.dart';
+import 'package:clothing_shop/view/widgets/appBar.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -10,6 +12,11 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: MyColors.bgColor,
+        appBar: appBar(),
+      ),
+    );
   }
 }

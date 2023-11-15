@@ -1,20 +1,42 @@
-import 'package:clothing_shop/constant/my_strings.dart';
+import 'dart:async';
+import 'package:clothing_shop/gen/assets.gen.dart';
 import 'package:clothing_shop/theme/colors/my_colors.dart';
-import 'package:clothing_shop/theme/textStyle/general_style.dart';
+import 'package:clothing_shop/theme/textStyle/splash_style.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // Timer.periodic(const Duration(seconds: 2), (timer) {
+    //   Get.off(() => const HomeScreen());
+    // });
     return Scaffold(
-      backgroundColor: MyColors.primaryColor,
-      body: Center(
-        child: Text(
-          MyStrings.nameApp,
-          style: GeneralTextStyle.nameApp,
-        ),
+      backgroundColor: MyColors.bgColor,
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(
+            padding:  EdgeInsets.only(top:Get.height / 2.4),
+            child: SizedBox(
+              width: double.maxFinite,
+              child: Image.asset(
+                Assets.images.splash.path,
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          Padding(
+            padding:  EdgeInsets.only(top: Get.height /2.5),
+            child:  Text(
+              'NimaShasmi',
+              style: SplashStyle.nameDeveloper,
+            ),
+          ),
+        ],
       ),
     );
   }
