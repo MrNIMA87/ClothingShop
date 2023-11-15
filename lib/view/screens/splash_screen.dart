@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:clothing_shop/gen/assets.gen.dart';
 import 'package:clothing_shop/theme/colors/my_colors.dart';
 import 'package:clothing_shop/theme/textStyle/splash_style.dart';
+import 'package:clothing_shop/view/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -10,9 +11,10 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Timer.periodic(const Duration(seconds: 2), (timer) {
-    //   Get.off(() => const HomeScreen());
-    // });
+    Timer.periodic(const Duration(seconds: 2), (timer) {
+      //TODO: inja yek shart bezar age sabt nam bood bere be Home Page
+      Get.off(() => const WelcomeScreen());
+    });
     return Scaffold(
       backgroundColor: MyColors.bgColor,
       body: Column(
@@ -20,7 +22,7 @@ class SplashScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
-            padding:  EdgeInsets.only(top:Get.height / 2.4),
+            padding: EdgeInsets.only(top: Get.height / 2.4),
             child: SizedBox(
               width: double.maxFinite,
               child: Image.asset(
@@ -30,8 +32,8 @@ class SplashScreen extends StatelessWidget {
             ),
           ),
           Padding(
-            padding:  EdgeInsets.only(top: Get.height /2.5),
-            child:  Text(
+            padding: EdgeInsets.only(top: Get.height / 2.5),
+            child: const Text(
               'NimaShasmi',
               style: SplashStyle.nameDeveloper,
             ),
