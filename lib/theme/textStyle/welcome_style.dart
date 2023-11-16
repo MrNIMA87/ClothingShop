@@ -29,13 +29,13 @@ class WelcomeStyle {
   static const TextStyle infoSignIn = TextStyle(
     color: Colors.black,
     fontFamily: 'Avenir_Regular',
-    fontSize: 18,
+    fontSize: 17,
     fontWeight: FontWeight.w500,
   );
   static const TextStyle signIn = TextStyle(
     color: MyColors.primaryColor,
     fontFamily: 'Avenir_Regular',
-    fontSize: 18,
-    fontWeight: FontWeight.w600,
+    fontSize: 17,
+    fontWeight: FontWeight.w700,
   );
 }

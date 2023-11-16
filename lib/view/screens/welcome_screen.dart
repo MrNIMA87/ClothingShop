@@ -3,6 +3,7 @@ import 'package:clothing_shop/constant/my_strings.dart';
 import 'package:clothing_shop/gen/assets.gen.dart';
 import 'package:clothing_shop/theme/colors/my_colors.dart';
 import 'package:clothing_shop/theme/textStyle/welcome_style.dart';
+import 'package:clothing_shop/view/screens/sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -133,16 +134,33 @@ class WelcomeScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: Dimens.bodyMargin),
-              RichText(
-                text: const TextSpan(
-                    text: MyStrings.signIn,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    MyStrings.signIn,
                     style: WelcomeStyle.infoSignIn,
-                    children: [
-                      TextSpan(
-                        text: ' Sign In',
+                    textAlign: TextAlign.center,
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      border: Border(
+                        bottom: BorderSide(
+                       color: MyColors.primaryColor,
+                       
+                      )
+                      )
+                    ),
+                    child: TextButton(
+                      onPressed: () => Get.to(() =>const SignIn()),
+                      child: const Text(
+                        'Sign in',
                         style: WelcomeStyle.signIn,
+                        textAlign: TextAlign.center,
                       ),
-                    ]),
+                    ),
+                  ),
+                ],
               )
             ],
           ),
