@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:clothing_shop/gen/assets.gen.dart';
-import 'package:clothing_shop/theme/colors/my_colors.dart';
+import 'package:clothing_shop/theme/colors/general_colors.dart';
 import 'package:clothing_shop/theme/textStyle/splash_style.dart';
 import 'package:clothing_shop/view/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +16,7 @@ class SplashScreen extends StatelessWidget {
       Get.off(() => const WelcomeScreen());
     });
     return Scaffold(
-      backgroundColor: MyColors.bgColor,
+      backgroundColor: GeneralColors.bgColor,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,

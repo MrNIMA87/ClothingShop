@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   get: ^4.6.5
   flutter_svg: ^2.0.9
+  intl: ^0.18.1
 
 dev_dependencies:
   flutter_test:
@@ -80,7 +81,7 @@ flutter:
     - family: Avenir_Regular
       fonts:
         - asset: assets/fonts/Metropolis-Regular.otf
-          weight: 400
+          weight: 700
   #         style: italic
     - family: Avenir_Bold
       fonts:

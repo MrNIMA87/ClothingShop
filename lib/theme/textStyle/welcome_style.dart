@@ -1,9 +1,9 @@
-import 'package:clothing_shop/theme/colors/my_colors.dart';
+import 'package:clothing_shop/theme/colors/general_colors.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeStyle {
   static const TextStyle nameApp = TextStyle(
-    color: MyColors.primaryColor,
+    color: GeneralColors.primaryColor,
     fontFamily: 'Avenir_Bold',
     fontSize: 28,
     fontWeight: FontWeight.w700,
@@ -33,7 +33,7 @@ class WelcomeStyle {
     fontWeight: FontWeight.w500,
   );
   static const TextStyle signIn = TextStyle(
-    color: MyColors.primaryColor,
+    color: GeneralColors.primaryColor,
     fontFamily: 'Avenir_Regular',
     fontSize: 17,
     fontWeight: FontWeight.w700,

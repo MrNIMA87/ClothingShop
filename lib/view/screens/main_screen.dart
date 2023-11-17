@@ -1,4 +1,4 @@
-import 'package:clothing_shop/theme/colors/my_colors.dart';
+import 'package:clothing_shop/theme/colors/general_colors.dart';
 import 'package:flutter/material.dart';
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
@@ -7,7 +7,7 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: MyColors.bgColor,
+        backgroundColor: GeneralColors.bgColor,
         body: Text('data'),
       ),
     );

@@ -1,7 +1,8 @@
 import 'package:clothing_shop/constant/dimens.dart';
-import 'package:clothing_shop/constant/my_strings.dart';
+import 'package:clothing_shop/constant/Strings/welcome_strings.dart';
+import 'package:clothing_shop/constant/extension.dart';
 import 'package:clothing_shop/gen/assets.gen.dart';
-import 'package:clothing_shop/theme/colors/my_colors.dart';
+import 'package:clothing_shop/theme/colors/general_colors.dart';
 import 'package:clothing_shop/theme/textStyle/welcome_style.dart';
 import 'package:clothing_shop/view/screens/sign_in.dart';
 import 'package:flutter/material.dart';
@@ -75,7 +76,7 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: Dimens.bodyMargin),
+              Dimens.bodyMargin.height,
               //Title
               RichText(
                 textAlign: TextAlign.center,
@@ -93,22 +94,22 @@ class WelcomeScreen extends StatelessWidget {
                       style: WelcomeStyle.nameApp,
                     ),
                     TextSpan(
-                      text: MyStrings.textAfterWelcomeScreen,
+                      text: WelcomeStrings.textAfterWelcomeScreen,
                       style: WelcomeStyle.title,
                     ),
                   ],
                 ),
               ),
-              const SizedBox(height: Dimens.bodyMargin),
+              Dimens.bodyMargin.height,
               const Text(
-                MyStrings.info,
+                WelcomeStrings.info,
                 style: WelcomeStyle.info,
                 textAlign: TextAlign.center,
                 maxLines: 2,
                 overflow: TextOverflow.visible,
                 softWrap: true,
               ),
-              const SizedBox(height: Dimens.bodyMargin),
+              Dimens.bodyMargin.height,
               //Button Next Page
               ElevatedButton(
                 style: const ButtonStyle(
@@ -120,7 +121,7 @@ class WelcomeScreen extends StatelessWidget {
                   width: double.maxFinite,
                   height: Get.height / 14,
                   decoration: const BoxDecoration(
-                    color: MyColors.primaryColor,
+                    color: GeneralColors.primaryColor,
                     borderRadius: BorderRadius.all(
                       Radius.circular(100),
                     ),
@@ -133,26 +134,23 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: Dimens.bodyMargin),
+              Dimens.bodyMargin.height,
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
-                    MyStrings.signIn,
+                    WelcomeStrings.signIn,
                     style: WelcomeStyle.infoSignIn,
                     textAlign: TextAlign.center,
                   ),
                   Container(
-                    decoration: BoxDecoration(
-                      border: Border(
-                        bottom: BorderSide(
-                       color: MyColors.primaryColor,
-                       
-                      )
-                      )
-                    ),
+                    decoration: const BoxDecoration(
+                        border: Border(
+                            bottom: BorderSide(
+                      color: GeneralColors.primaryColor,
+                    ))),
                     child: TextButton(
-                      onPressed: () => Get.to(() =>const SignIn()),
+                      onPressed: () => Get.to(() => SignIn()),
                       child: const Text(
                         'Sign in',
                         style: WelcomeStyle.signIn,
