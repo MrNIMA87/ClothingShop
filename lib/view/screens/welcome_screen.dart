@@ -4,7 +4,7 @@ import 'package:clothing_shop/constant/extension.dart';
 import 'package:clothing_shop/gen/assets.gen.dart';
 import 'package:clothing_shop/theme/colors/general_colors.dart';
 import 'package:clothing_shop/theme/textStyle/welcome_style.dart';
-import 'package:clothing_shop/view/screens/sign_in.dart';
+import 'package:clothing_shop/view/screens/sign/sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

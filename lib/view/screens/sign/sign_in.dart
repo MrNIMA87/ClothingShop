@@ -94,7 +94,7 @@ class SignIn extends StatelessWidget {
                 //button SignIn
                 ButtonSign(title: 'Sign In'),
                 //LOGIN WITH OTHER PLATFORM
-              //TODO:  OtherSign(title: 'Or sign in with')
+                //TODO:  OtherSign(title: 'Or sign in with')
               ],
             ),
           ),
