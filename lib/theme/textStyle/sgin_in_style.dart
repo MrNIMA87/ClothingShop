@@ -32,4 +32,10 @@ class SignInStyle {
     fontSize: 15,
     fontWeight: FontWeight.w700,
   );
+  static const TextStyle titleSignOtherPlatform = TextStyle(
+    color: Colors.grey,
+    fontFamily: 'Avenir_Regular',
+    fontSize: 15,
+    fontWeight: FontWeight.w500,
+  );
 }

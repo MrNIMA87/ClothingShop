@@ -3,7 +3,9 @@ import 'package:clothing_shop/constant/dimens.dart';
 import 'package:clothing_shop/constant/extension.dart';
 import 'package:clothing_shop/theme/colors/general_colors.dart';
 import 'package:clothing_shop/theme/textStyle/sgin_in_style.dart';
-import 'package:clothing_shop/view/widgets/sgin_in/input.dart';
+import 'package:clothing_shop/view/widgets/general/button_sign.dart';
+import 'package:clothing_shop/view/widgets/sgin/input.dart';
+import 'package:clothing_shop/view/widgets/sgin/sgin_with_other_platform.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -17,27 +19,27 @@ class SignIn extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         backgroundColor: GeneralColors.bgColor,
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              //Title
-              const Text(
-                'Sign in',
-                style: SignInStyle.title,
-                textAlign: TextAlign.center,
-              ),
-              Dimens.bodyMargin.height,
-              //Text Welcome
-              const Text(
-                SignInStrings.welcome,
-                style: SignInStyle.welcome,
-              ),
-              //inputs
-              Padding(
-                padding: const EdgeInsets.only(
-                    left: 18, right: 18, top: Dimens.bodyMargin, bottom: 30),
-                child: Column(
+        body: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                //Title
+                const Text(
+                  'Sign in',
+                  style: SignInStyle.title,
+                  textAlign: TextAlign.center,
+                ),
+                Dimens.bodyMargin.height,
+                //Text Welcome
+                const Text(
+                  SignInStrings.welcome,
+                  style: SignInStyle.welcome,
+                ),
+                (Dimens.bodyMargin * 2).height,
+                //inputs
+                Column(
                   children: [
                     //Input Email
                     SignInInput(
@@ -68,23 +70,33 @@ class SignIn extends StatelessWidget {
                     ),
                   ],
                 ),
-              ),
-              SizedBox(
-                width: double.maxFinite,
-                child: SizedBox(
-                  width: 50,
-                  child: TextButton(
-                    onPressed: () {},
-                    child: const Text(
-                      'Forget Password?',
-                      style: SignInStyle.forgetPassword,
-                      textAlign: TextAlign.end,
+                Padding(
+                  padding: EdgeInsets.only(
+                      left: Get.width / 2, bottom: Dimens.bodyMargin, top: 8),
+                  child: Container(
+                    height: Get.height / 25,
+                    width: Get.width / 2.6,
+                    decoration: const BoxDecoration(
+                        border: Border(
+                            bottom: BorderSide(
+                      color: GeneralColors.primaryColor,
+                    ))),
+                    child: TextButton(
+                      onPressed: () {},
+                      child: const Text(
+                        'Forget Password?',
+                        style: SignInStyle.forgetPassword,
+                        textAlign: TextAlign.center,
+                      ),
                     ),
-                    
                   ),
                 ),
-              )
-            ],
+                //button SignIn
+                ButtonSign(title: 'Sign In'),
+                //LOGIN WITH OTHER PLATFORM
+              //TODO:  OtherSign(title: 'Or sign in with')
+              ],
+            ),
           ),
         ),
       ),

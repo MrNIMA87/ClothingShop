@@ -9,4 +9,9 @@ class GeneralTextStyle {
     letterSpacing: 8,
     shadows: [AppTextShadow.splashShadow],
   );
+  static const TextStyle textButton = TextStyle(
+    fontFamily: 'Avenir_Regular',
+    color: Colors.white,
+    fontSize: 22,
+  );
 }
