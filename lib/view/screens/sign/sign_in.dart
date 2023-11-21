@@ -14,13 +14,15 @@ class SignIn extends StatelessWidget {
   SignIn({super.key});
 
   RxBool visiblePassword = true.obs;
+  TextEditingController? emailTextEditingController;
+  TextEditingController? passwordTextEditingController;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         backgroundColor: GeneralColors.bgColor,
         body: Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding: const EdgeInsets.all(Dimens.paddingBody),
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -43,6 +45,7 @@ class SignIn extends StatelessWidget {
                   children: [
                     //Input Email
                     SignInInput(
+                      textEditingController: emailTextEditingController!,
                       title: 'Email',
                       hint: SignInStrings.hintTextEmail,
                       Icon: const Icon(Icons.email_outlined),
@@ -53,6 +56,7 @@ class SignIn extends StatelessWidget {
                     //Input Password
                     Obx(
                       () => SignInInput(
+                        textEditingController: passwordTextEditingController!,
                         title: 'Password',
                         hint: '******************',
                         Icon: IconButton(
@@ -92,7 +96,10 @@ class SignIn extends StatelessWidget {
                   ),
                 ),
                 //button SignIn
-                ButtonSign(title: 'Sign In'),
+                ButtonSign(
+                  title: 'Sign In',
+                  onPressed: () {},
+                ),
                 //LOGIN WITH OTHER PLATFORM
                 //TODO:  OtherSign(title: 'Or sign in with')
               ],

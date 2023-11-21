@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ButtonSign extends StatelessWidget {
-  ButtonSign({super.key, required this.title});
+  ButtonSign({super.key, required this.title, required this.onPressed});
   String title;
+  final Function() onPressed;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,7 +19,7 @@ class ButtonSign extends StatelessWidget {
         ),
       ),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: onPressed,
         style: const ButtonStyle(
           backgroundColor: MaterialStatePropertyAll(Colors.transparent),
           elevation: MaterialStatePropertyAll(0.0),

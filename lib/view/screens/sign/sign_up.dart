@@ -1,14 +1,17 @@
 import 'dart:developer';
 
 import 'package:clothing_shop/constant/Strings/sign_up_strings.dart';
+import 'package:clothing_shop/constant/data_base/user_info.dart';
 import 'package:clothing_shop/constant/extension.dart';
 import 'package:clothing_shop/theme/colors/general_colors.dart';
 import 'package:clothing_shop/theme/textStyle/sign_up.dart';
+import 'package:clothing_shop/view/screens/sign/verify_screen.dart';
 import 'package:clothing_shop/view/widgets/general/button_sign.dart';
 import 'package:clothing_shop/view/widgets/sgin/input.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 import '../../../constant/Strings/sign_in_strings.dart';
 import '../../../constant/dimens.dart';
@@ -18,11 +21,15 @@ class SignUp extends StatelessWidget {
   SignUp({super.key});
   RxBool visiblePassword = true.obs;
   RxBool acceptRules = false.obs;
+  TextEditingController? nameTextEditingController;
+  TextEditingController? emailTextEditingController;
+  TextEditingController? passwordTextEditingController;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: EdgeInsets.all(Dimens.paddingBody),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -50,17 +57,22 @@ class SignUp extends StatelessWidget {
                     hint: SignUpStrings.hintName,
                     textInputType: TextInputType.emailAddress,
                     visiblePassword: false.obs,
+                    textEditingController: nameTextEditingController!,
                   ),
+                  (Dimens.bodyMargin / 2).height,
                   //email
                   SignInInput(
+                    textEditingController: emailTextEditingController!,
                     title: "Email",
                     hint: SignUpStrings.hintEmail,
                     textInputType: TextInputType.emailAddress,
                     visiblePassword: false.obs,
                   ),
+                  (Dimens.bodyMargin / 2).height,
                   //password
                   Obx(
                     () => SignInInput(
+                      textEditingController: passwordTextEditingController!,
                       title: "Password",
                       hint: '**********************',
                       textInputType: TextInputType.visiblePassword,
@@ -78,6 +90,7 @@ class SignUp extends StatelessWidget {
                   ),
                 ],
               ),
+              //Accept rules
               Row(
                 children: [
                   Obx(
@@ -90,6 +103,7 @@ class SignUp extends StatelessWidget {
                       },
                     ),
                   ),
+                  //Text accept Rules
                   RichText(
                     text: const TextSpan(
                       text: '',
@@ -107,7 +121,16 @@ class SignUp extends StatelessWidget {
                   )
                 ],
               ),
-              ButtonSign(title: 'Sign Up'),
+              ButtonSign(
+                title: 'Sign Up',
+                onPressed: () {
+                  Get.to(() => VerifyCodeScreen());
+                  GetStorage()
+                      .write(UserInfo.email, emailTextEditingController);
+                  GetStorage()
+                      .write(UserInfo.password, passwordTextEditingController);
+                },
+              ),
             ],
           ),
         ),

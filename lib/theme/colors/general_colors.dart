@@ -5,7 +5,7 @@ class GeneralColors {
   static const Color primaryColor = Color.fromARGB(255, 112, 79, 56);
   static const Color iconsColor = Color.fromARGB(255, 248, 248, 248);
   static const Color nameDeveloper = Color.fromARGB(47, 0, 0, 0);
-  static const Color infoColor = Color.fromARGB(150, 0, 0, 0);
+  static const Color infoColor = Color.fromARGB(160, 0, 0, 0);
   static const Color hint = Color.fromARGB(120, 0, 0, 0);
   static const Color borderInput = Color.fromARGB(40, 0, 55, 128);
 }

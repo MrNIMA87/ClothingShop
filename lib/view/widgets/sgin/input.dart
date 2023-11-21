@@ -1,6 +1,7 @@
 import 'package:clothing_shop/constant/extension.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 import '../../../constant/Strings/sign_in_strings.dart';
 import '../../../theme/colors/general_colors.dart';
@@ -14,10 +15,12 @@ class SignInInput extends StatelessWidget {
     required this.textInputType,
     required this.visiblePassword,
     this.Icon,
+    required this.textEditingController,
   });
   final title;
   final hint;
   final Icon;
+  final TextEditingController textEditingController;
   TextInputType textInputType;
   RxBool visiblePassword;
   @override
@@ -47,22 +50,21 @@ class SignInInput extends StatelessWidget {
             ),
           ),
           child: Center(
-            child: 
-               TextField(
-                obscureText: visiblePassword.value,
-                keyboardType: textInputType,
-                autocorrect: true,
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintText: hint,
-                  hintStyle: SignInStyle.hint,
-                  suffixIcon: Icon,
-                  suffixIconColor: Colors.black87,
-                ),
+            child: TextField(
+              controller: textEditingController,
+              obscureText: visiblePassword.value,
+              keyboardType: textInputType,
+              autocorrect: true,
+              decoration: InputDecoration(
+                border: InputBorder.none,
+                hintText: hint,
+                hintStyle: SignInStyle.hint,
+                suffixIcon: Icon,
+                suffixIconColor: Colors.black87,
               ),
             ),
           ),
-        
+        ),
       ],
     );
   }
