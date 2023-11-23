@@ -1,6 +1,8 @@
 import 'package:clothing_shop/theme/shadow/text_shadow.dart';
 import 'package:flutter/material.dart';
 
+import '../colors/general_colors.dart';
+
 class GeneralTextStyle {
   static const TextStyle nameApp = TextStyle(
     fontFamily: 'Avenir_Bold',
@@ -13,5 +15,11 @@ class GeneralTextStyle {
     fontFamily: 'Avenir_Regular',
     color: Colors.white,
     fontSize: 22,
+  );
+  static const TextStyle hint = TextStyle(
+    fontFamily: 'Avenir_Regular',
+    fontSize: 17,
+    fontWeight: FontWeight.w600,
+    color: GeneralColors.hint,
   );
 }

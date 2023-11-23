@@ -1,5 +1,6 @@
 import 'package:clothing_shop/theme/colors/general_colors.dart';
 import 'package:clothing_shop/theme/themes.dart';
+import 'package:clothing_shop/view/screens/home_page.dart';
 import 'package:clothing_shop/view/screens/sign/sign_in.dart';
 import 'package:clothing_shop/view/screens/sign/sign_up.dart';
 import 'package:clothing_shop/view/screens/sign/verify_screen.dart';
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
       locale:const Locale('en'),
       debugShowCheckedModeBanner: false,
       theme: AppThemes.themeData,
-      home: SignUp(),
+      home: const HomePage(),
     );
   }
 }

@@ -19,95 +19,98 @@ class SignIn extends StatelessWidget {
   TextEditingController? passwordTextEditingController;
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: GeneralColors.bgColor,
-        body: Padding(
-          padding: const EdgeInsets.all(Dimens.paddingBody),
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                //Title
-                const Text(
-                  'Sign in',
-                  style: SignInStyle.title,
-                  textAlign: TextAlign.center,
-                ),
-                Dimens.bodyMargin.height,
-                //Text Welcome
-                const Text(
-                  SignInStrings.welcome,
-                  style: SignInStyle.welcome,
-                ),
-                (Dimens.bodyMargin * 2).height,
-                //inputs
-                Column(
-                  children: [
-                    //Input Email
-                    SignInput(
-                      textEditingController: emailTextEditingController!,
-                      title: 'Email',
-                      hint: SignInStrings.hintTextEmail,
-                      Icon: const Icon(Icons.email_outlined),
-                      textInputType: TextInputType.emailAddress,
-                      visiblePassword: false.obs,
-                      emailChecker: false.obs,
-                    ),
-                    20.0.height,
-                    //Input Password
-                    Obx(
-                      () => SignInput(
-                        textEditingController: passwordTextEditingController!,
-                        title: 'Password',
-                        hint: '******************',
-                        Icon: IconButton(
-                          onPressed: () {
-                            visiblePassword.value = !visiblePassword.value;
-                            print(visiblePassword.value);
-                          },
-                          icon: Icon(visiblePassword.value == true
-                              ? CupertinoIcons.eye_slash
-                              : CupertinoIcons.eye_fill),
-                        ),
-                        textInputType: TextInputType.visiblePassword,
-                        visiblePassword: visiblePassword.value.obs,
+    return InkWell(
+      onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+      child: SafeArea(
+        child: Scaffold(
+          backgroundColor: GeneralColors.bgColor,
+          body: Padding(
+            padding: const EdgeInsets.all(Dimens.paddingBody),
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  //Title
+                  const Text(
+                    'Sign in',
+                    style: SignInStyle.title,
+                    textAlign: TextAlign.center,
+                  ),
+                  Dimens.bodyMargin.height,
+                  //Text Welcome
+                  const Text(
+                    SignInStrings.welcome,
+                    style: SignInStyle.welcome,
+                  ),
+                  (Dimens.bodyMargin * 2).height,
+                  //inputs
+                  Column(
+                    children: [
+                      //Input Email
+                      SignInput(
+                        textEditingController: emailTextEditingController!,
+                        title: 'Email',
+                        hint: SignInStrings.hintTextEmail,
+                        Icon: const Icon(Icons.email_outlined),
+                        textInputType: TextInputType.emailAddress,
+                        visiblePassword: false.obs,
                         emailChecker: false.obs,
                       ),
-                    ),
-                  ],
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                      left: Get.width / 2, bottom: Dimens.bodyMargin, top: 8),
-                  child: Container(
-                    height: Get.height / 25,
-                    width: Get.width / 2.6,
-                    decoration: const BoxDecoration(
-                        border: Border(
-                            bottom: BorderSide(
-                      color: GeneralColors.primaryColor,
-                    ))),
-                    child: TextButton(
-                      onPressed: () {},
-                      child: const Text(
-                        'Forget Password?',
-                        style: SignInStyle.forgetPassword,
-                        textAlign: TextAlign.center,
+                      20.0.height,
+                      //Input Password
+                      Obx(
+                        () => SignInput(
+                          textEditingController: passwordTextEditingController!,
+                          title: 'Password',
+                          hint: '******************',
+                          Icon: IconButton(
+                            onPressed: () {
+                              visiblePassword.value = !visiblePassword.value;
+                              print(visiblePassword.value);
+                            },
+                            icon: Icon(visiblePassword.value == true
+                                ? CupertinoIcons.eye_slash
+                                : CupertinoIcons.eye_fill),
+                          ),
+                          textInputType: TextInputType.visiblePassword,
+                          visiblePassword: visiblePassword.value.obs,
+                          emailChecker: false.obs,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(
+                        left: Get.width / 2, bottom: Dimens.bodyMargin, top: 8),
+                    child: Container(
+                      height: Get.height / 25,
+                      width: Get.width / 2.6,
+                      decoration: const BoxDecoration(
+                          border: Border(
+                              bottom: BorderSide(
+                        color: GeneralColors.primaryColor,
+                      ))),
+                      child: TextButton(
+                        onPressed: () {},
+                        child: const Text(
+                          'Forget Password?',
+                          style: SignInStyle.forgetPassword,
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                     ),
                   ),
-                ),
-                //button SignIn
-                ButtonSign(
-                  title: 'Sign In',
-                  onPressed: () {
-                    Get.to(VerifyCodeScreen());
-                  },
-                ),
-                //LOGIN WITH OTHER PLATFORM
-                //TODO:  OtherSign(title: 'Or sign in with')
-              ],
+                  //button SignIn
+                  ButtonSign(
+                    title: 'Sign In',
+                    onPressed: () {
+                      Get.to(VerifyCodeScreen());
+                    },
+                  ),
+                  //LOGIN WITH OTHER PLATFORM
+                  //TODO:  OtherSign(title: 'Or sign in with')
+                ],
+              ),
             ),
           ),
         ),

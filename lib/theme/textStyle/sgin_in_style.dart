@@ -14,12 +14,7 @@ class SignInStyle {
     fontWeight: FontWeight.w500,
     color: GeneralColors.infoColor,
   );
-  static const TextStyle hint = TextStyle(
-    fontFamily: 'Avenir_Regular',
-    fontSize: 15,
-    fontWeight: FontWeight.w600,
-    color: GeneralColors.hint,
-  );
+
   static const TextStyle titleTextField = TextStyle(
     fontFamily: 'Avenir_Regular',
     fontSize: 17,

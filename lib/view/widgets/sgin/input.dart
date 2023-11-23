@@ -7,6 +7,7 @@ import 'package:get_storage/get_storage.dart';
 
 import '../../../constant/Strings/sign_in_strings.dart';
 import '../../../theme/colors/general_colors.dart';
+import '../../../theme/textStyle/general_style.dart';
 import '../../../theme/textStyle/sgin_in_style.dart';
 
 class SignInput extends StatelessWidget {
@@ -67,7 +68,7 @@ class SignInput extends StatelessWidget {
               decoration: InputDecoration(
                 border: InputBorder.none,
                 hintText: hint,
-                hintStyle: SignInStyle.hint,
+                hintStyle: GeneralTextStyle.hint,
                 suffixIcon: Icon,
                 suffixIconColor: Colors.black87,
               ),

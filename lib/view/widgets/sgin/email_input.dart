@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:clothing_shop/constant/extension.dart';
+import 'package:clothing_shop/theme/textStyle/general_style.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -50,7 +51,7 @@ class EmailInput extends StatelessWidget {
               decoration: InputDecoration(
                 border: InputBorder.none,
                 hintText: 'nimashamsi1400@gmail.com',
-                hintStyle: SignInStyle.hint,
+                hintStyle: GeneralTextStyle.hint,
                 suffixIconColor: Colors.black87,
               ),
             ),
