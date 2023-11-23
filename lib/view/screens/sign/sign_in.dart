@@ -3,6 +3,7 @@ import 'package:clothing_shop/constant/dimens.dart';
 import 'package:clothing_shop/constant/extension.dart';
 import 'package:clothing_shop/theme/colors/general_colors.dart';
 import 'package:clothing_shop/theme/textStyle/sgin_in_style.dart';
+import 'package:clothing_shop/view/screens/sign/verify_screen.dart';
 import 'package:clothing_shop/view/widgets/general/button_sign.dart';
 import 'package:clothing_shop/view/widgets/sgin/input.dart';
 import 'package:clothing_shop/view/widgets/sgin/sgin_with_other_platform.dart';
@@ -44,18 +45,19 @@ class SignIn extends StatelessWidget {
                 Column(
                   children: [
                     //Input Email
-                    SignInInput(
+                    SignInput(
                       textEditingController: emailTextEditingController!,
                       title: 'Email',
                       hint: SignInStrings.hintTextEmail,
                       Icon: const Icon(Icons.email_outlined),
                       textInputType: TextInputType.emailAddress,
                       visiblePassword: false.obs,
+                      emailChecker: false.obs,
                     ),
                     20.0.height,
                     //Input Password
                     Obx(
-                      () => SignInInput(
+                      () => SignInput(
                         textEditingController: passwordTextEditingController!,
                         title: 'Password',
                         hint: '******************',
@@ -70,6 +72,7 @@ class SignIn extends StatelessWidget {
                         ),
                         textInputType: TextInputType.visiblePassword,
                         visiblePassword: visiblePassword.value.obs,
+                        emailChecker: false.obs,
                       ),
                     ),
                   ],
@@ -98,7 +101,9 @@ class SignIn extends StatelessWidget {
                 //button SignIn
                 ButtonSign(
                   title: 'Sign In',
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.to(VerifyCodeScreen());
+                  },
                 ),
                 //LOGIN WITH OTHER PLATFORM
                 //TODO:  OtherSign(title: 'Or sign in with')

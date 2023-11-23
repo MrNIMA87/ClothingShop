@@ -9,25 +9,12 @@ import '../../../constant/Strings/sign_in_strings.dart';
 import '../../../theme/colors/general_colors.dart';
 import '../../../theme/textStyle/sgin_in_style.dart';
 
-class SignInput extends StatelessWidget {
-  SignInput({
+class EmailInput extends StatelessWidget {
+  EmailInput({
     super.key,
-    required this.title,
-    required this.hint,
-    required this.textInputType,
-    required this.visiblePassword,
-    this.Icon,
-    required this.textEditingController,
-    required this.emailChecker,
   });
-  final title;
-  final hint;
-  final Icon;
-  final TextEditingController textEditingController;
-  TextInputType textInputType;
-  RxBool emailChecker;
-  RxBool visiblePassword;
-  RxString? valueInput;
+
+  TextEditingController emailController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -35,7 +22,7 @@ class SignInput extends StatelessWidget {
         SizedBox(
             width: double.maxFinite,
             child: Text(
-              title,
+              'Email',
               textAlign: TextAlign.start,
               style: SignInStyle.titleTextField,
             )),
@@ -56,19 +43,14 @@ class SignInput extends StatelessWidget {
           ),
           child: Center(
             child: TextField(
-              controller: textEditingController,
-              obscureText: visiblePassword.value,
-              keyboardType: textInputType,
+              controller: emailController,
+              keyboardType: TextInputType.emailAddress,
               autocorrect: true,
-              onChanged: (value) {
-                valueInput?.value = value.toString();
-                log(valueInput!.value);
-              },
+              onChanged: (value) {},
               decoration: InputDecoration(
                 border: InputBorder.none,
-                hintText: hint,
+                hintText: 'nimashamsi1400@gmail.com',
                 hintStyle: SignInStyle.hint,
-                suffixIcon: Icon,
                 suffixIconColor: Colors.black87,
               ),
             ),
