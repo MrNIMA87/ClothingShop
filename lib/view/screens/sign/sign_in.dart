@@ -2,6 +2,7 @@ import 'package:clothing_shop/constant/Strings/sign_in_strings.dart';
 import 'package:clothing_shop/constant/dimens.dart';
 import 'package:clothing_shop/constant/extension.dart';
 import 'package:clothing_shop/theme/colors/general_colors.dart';
+import 'package:clothing_shop/theme/textStyle/general_style.dart';
 import 'package:clothing_shop/theme/textStyle/sgin_in_style.dart';
 import 'package:clothing_shop/view/screens/sign/verify_screen.dart';
 import 'package:clothing_shop/view/widgets/general/button_sign.dart';
@@ -33,7 +34,7 @@ class SignIn extends StatelessWidget {
                   //Title
                   const Text(
                     'Sign in',
-                    style: SignInStyle.title,
+                    style: GeneralTextStyle.title,
                     textAlign: TextAlign.center,
                   ),
                   Dimens.bodyMargin.height,

@@ -14,6 +14,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import '../../../constant/Strings/sign_in_strings.dart';
 import '../../../constant/dimens.dart';
+import '../../../theme/textStyle/general_style.dart';
 import '../../../theme/textStyle/sgin_in_style.dart';
 
 class SignUp extends StatefulWidget {
@@ -48,7 +49,7 @@ class _SignUpState extends State<SignUp> {
                     //Title
                     const Text(
                       'Create Account',
-                      style: SignInStyle.title,
+                      style: GeneralTextStyle.title,
                       textAlign: TextAlign.center,
                     ),
                     Dimens.bodyMargin.height,

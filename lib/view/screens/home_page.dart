@@ -1,22 +1,21 @@
 import 'package:clothing_shop/constant/dimens.dart';
+import 'package:clothing_shop/constant/extension.dart';
+import 'package:clothing_shop/controller/product_controller.dart';
 import 'package:clothing_shop/gen/assets.gen.dart';
 import 'package:clothing_shop/theme/colors/general_colors.dart';
 import 'package:clothing_shop/theme/textStyle/general_style.dart';
+import 'package:clothing_shop/theme/textStyle/home_style.dart';
+import 'package:clothing_shop/view/widgets/category.dart';
+import 'package:clothing_shop/view/widgets/slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
 
+  ProductController productsController = Get.put(ProductController());
   @override
   Widget build(BuildContext context) {
-    List<Widget> fakeBanner = [
-      Image.asset(Assets.images.bannerSlider2.path),
-      Image.asset(Assets.images.bannerSlider3.path),
-    ];
-    RxInt _current = 0.obs;
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: SafeArea(
@@ -70,54 +69,83 @@ class HomePage extends StatelessWidget {
             ),
           ),
           backgroundColor: GeneralColors.bgColor,
-          body: Padding(
-            padding: const EdgeInsets.all(Dimens.bodyMargin / 2),
-            child: Column(children: [
-              CarouselSlider(
-                items: fakeBanner,
-                options: CarouselOptions(
-                  aspectRatio: 16 / 9,
-                  viewportFraction: 0.8,
-                  initialPage: 0,
-                  enableInfiniteScroll: true,
-                  reverse: false,
-                  autoPlay: true,
-                  autoPlayInterval: const Duration(seconds: 3),
-                  autoPlayAnimationDuration: const Duration(milliseconds: 800),
-                  autoPlayCurve: Curves.fastOutSlowIn,
-                  enlargeCenterPage: true,
-                  enlargeFactor: 0.3,
-                  onPageChanged: (index, reason) {
-                    _current.value = index.toInt();
-                  },
-                  scrollDirection: Axis.horizontal,
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: fakeBanner
-                    .asMap()
-                    .entries
-                    .map((e) => Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: GestureDetector(
-                            child: Obx(
-                              () => Container(
-                                width: 8,
-                                height: 8,
-                                decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: _current == e.key
-                                        ? Colors.black
-                                        : Colors.grey),
-                              ),
-                            ),
+          body: Obx(() => productsController.loading == true
+              ? Padding(
+                  padding: const EdgeInsets.all(Dimens.paddingBody),
+                  child: Column(
+                    children: [
+                      //slider
+                      const SliderWidget(),
+                      //
+                      Dimens.bodyMargin.height,
+                      //category:
+                      const Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Category',
+                            style: HomeStyle.title,
                           ),
-                        ))
-                    .toList(),
-              ),
-            ]),
-          ),
+                          Text(
+                            'See All',
+                            style: HomeStyle.seeAll,
+                          ),
+                        ],
+                      ),
+                      Dimens.bodyMargin.height,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Category(
+                            icon: Assets.icons.tShirt.provider(),
+                            title: 'T-Shirt',
+                          ),
+                          Category(
+                            icon: Assets.icons.pant.provider(),
+                            title: 'Pant',
+                          ),
+                          Category(
+                            icon: Assets.icons.dress.provider(),
+                            title: 'Dress',
+                          ),
+                          Category(
+                            icon: Assets.icons.jacket.provider(),
+                            title: 'Jacket',
+                          ),
+                        ],
+                      ),
+                      Dimens.bodyMargin.height,
+                      //titleCategory flash sale
+                      const Align(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          'Flash sale',
+                          style: HomeStyle.title,
+                        ),
+                      ),
+                      SizedBox(
+                        width: double.infinity,
+                        height: 50,
+                        child: ListView.builder(
+                          itemBuilder: (context, index) {
+                            return InkWell(
+                              child: Container(
+                                height: 45,
+                                decoration: const BoxDecoration(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(31)),
+                                ),
+                                child: Text(
+                                    productsController.products[index].title!),
+                              ),
+                            );
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
+                )
+              : const Center(child: CircularProgressIndicator())),
         ),
       ),
     );

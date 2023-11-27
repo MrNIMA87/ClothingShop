@@ -11,6 +11,12 @@ class GeneralTextStyle {
     letterSpacing: 8,
     shadows: [AppTextShadow.splashShadow],
   );
+  static const TextStyle title = TextStyle(
+    fontFamily: 'Avenir_Regular',
+    fontSize: 35,
+    fontWeight: FontWeight.w600,
+    color: Colors.black,
+  );
   static const TextStyle textButton = TextStyle(
     fontFamily: 'Avenir_Regular',
     color: Colors.white,

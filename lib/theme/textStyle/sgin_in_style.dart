@@ -2,12 +2,7 @@ import 'package:clothing_shop/theme/colors/general_colors.dart';
 import 'package:flutter/material.dart';
 
 class SignInStyle {
-  static const TextStyle title = TextStyle(
-    fontFamily: 'Avenir_Regular',
-    fontSize: 35,
-    fontWeight: FontWeight.w600,
-    color: Colors.black,
-  );
+
   static const TextStyle welcome = TextStyle(
     fontFamily: 'Avenir_Regular',
     fontSize: 15,

@@ -12,11 +12,23 @@ import 'package:flutter/widgets.dart';
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/dress.png
+  AssetGenImage get dress => const AssetGenImage('assets/icons/dress.png');
+
+  /// File path: assets/icons/jacket.png
+  AssetGenImage get jacket => const AssetGenImage('assets/icons/jacket.png');
+
+  /// File path: assets/icons/pant.png
+  AssetGenImage get pant => const AssetGenImage('assets/icons/pant.png');
+
   /// File path: assets/icons/search.svg
   String get search => 'assets/icons/search.svg';
 
+  /// File path: assets/icons/t-shirt.png
+  AssetGenImage get tShirt => const AssetGenImage('assets/icons/t-shirt.png');
+
   /// List of all assets
-  List<String> get values => [search];
+  List<dynamic> get values => [dress, jacket, pant, search, tShirt];
 }
 
 class $AssetsImagesGen {
