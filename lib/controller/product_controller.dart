@@ -24,7 +24,6 @@ class ProductController extends GetxController {
         });
       }
       log('Status code: ' + response.statusCode.toString());
-      log('Test: ' + products.value[1].title!);
     } catch (e) {
       log(e.toString());
     }

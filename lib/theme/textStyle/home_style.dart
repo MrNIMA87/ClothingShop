@@ -12,8 +12,20 @@ class HomeStyle {
   static const TextStyle categoryTitle = TextStyle(
     fontFamily: 'Avenir_Regular',
     fontSize: 15,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w700,
     color: Colors.black87,
+  );
+  static const TextStyle flashSaleCategoryTitleNotSelected = TextStyle(
+    fontFamily: 'Avenir_Regular',
+    fontSize: 15,
+    fontWeight: FontWeight.w700,
+    color: Colors.black87,
+  );
+  static const TextStyle flashSaleCategoryTitleOntSelected = TextStyle(
+    fontFamily: 'Avenir_Regular',
+    fontSize: 15,
+    fontWeight: FontWeight.w700,
+    color: Colors.white,
   );
   static const TextStyle seeAll = TextStyle(
     color: GeneralColors.primaryColor,
