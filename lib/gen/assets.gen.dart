@@ -42,6 +42,46 @@ class $AssetsImagesGen {
   AssetGenImage get bannerSlider3 =>
       const AssetGenImage('assets/images/bannerSlider3.jpg');
 
+  /// File path: assets/images/explore1.jpg
+  AssetGenImage get explore1 =>
+      const AssetGenImage('assets/images/explore1.jpg');
+
+  /// File path: assets/images/explore_2_1.jpg
+  AssetGenImage get explore21 =>
+      const AssetGenImage('assets/images/explore_2_1.jpg');
+
+  /// File path: assets/images/explore_2_2.jpg
+  AssetGenImage get explore22 =>
+      const AssetGenImage('assets/images/explore_2_2.jpg');
+
+  /// File path: assets/images/explore_3_1.jpg
+  AssetGenImage get explore31 =>
+      const AssetGenImage('assets/images/explore_3_1.jpg');
+
+  /// File path: assets/images/explore_3_2.jpg
+  AssetGenImage get explore32 =>
+      const AssetGenImage('assets/images/explore_3_2.jpg');
+
+  /// File path: assets/images/explore_3_3.jpg
+  AssetGenImage get explore33 =>
+      const AssetGenImage('assets/images/explore_3_3.jpg');
+
+  /// File path: assets/images/explore_3_4.jpg
+  AssetGenImage get explore34 =>
+      const AssetGenImage('assets/images/explore_3_4.jpg');
+
+  /// File path: assets/images/explore_4_1.jpg
+  AssetGenImage get explore41 =>
+      const AssetGenImage('assets/images/explore_4_1.jpg');
+
+  /// File path: assets/images/explore_4_2.jpg
+  AssetGenImage get explore42 =>
+      const AssetGenImage('assets/images/explore_4_2.jpg');
+
+  /// File path: assets/images/explore_5.jpg
+  AssetGenImage get explore5 =>
+      const AssetGenImage('assets/images/explore_5.jpg');
+
   /// File path: assets/images/splash.png
   AssetGenImage get splash => const AssetGenImage('assets/images/splash.png');
 
@@ -58,8 +98,24 @@ class $AssetsImagesGen {
       const AssetGenImage('assets/images/welcome_3.png');
 
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [bannerSlider2, bannerSlider3, splash, welcome1, welcome2, welcome3];
+  List<AssetGenImage> get values => [
+        bannerSlider2,
+        bannerSlider3,
+        explore1,
+        explore21,
+        explore22,
+        explore31,
+        explore32,
+        explore33,
+        explore34,
+        explore41,
+        explore42,
+        explore5,
+        splash,
+        welcome1,
+        welcome2,
+        welcome3
+      ];
 }
 
 class Assets {

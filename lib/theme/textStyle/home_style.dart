@@ -15,6 +15,18 @@ class HomeStyle {
     fontWeight: FontWeight.w700,
     color: Colors.black87,
   );
+  static const TextStyle titleProduct = TextStyle(
+    fontFamily: 'Avenir_Regular',
+    fontSize: 15,
+    fontWeight: FontWeight.w600,
+    color: Colors.black87,
+  );
+  static const TextStyle titleSingleProduct = TextStyle(
+    fontFamily: 'Avenir_Regular',
+    fontSize: 18,
+    fontWeight: FontWeight.w700,
+    color: Colors.black87,
+  );
   static const TextStyle flashSaleCategoryTitleNotSelected = TextStyle(
     fontFamily: 'Avenir_Regular',
     fontSize: 15,
