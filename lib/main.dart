@@ -7,9 +7,16 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
-void main() async{
+void main() async {
   await GetStorage.init();
- 
+  SystemChrome.setSystemUIOverlayStyle(
+    SystemUiOverlayStyle(
+      statusBarIconBrightness: Brightness.dark,
+      statusBarColor: GeneralColors.bgColor,
+      systemNavigationBarColor: GeneralColors.bgColor,
+      systemNavigationBarIconBrightness: Brightness.dark,
+    ),
+  );
   runApp(const MyApp());
 }
 
@@ -20,7 +27,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      locale:const Locale('en'),
+      locale: const Locale('en'),
       debugShowCheckedModeBanner: false,
       theme: AppThemes.themeData,
       home: SingleProduct(),

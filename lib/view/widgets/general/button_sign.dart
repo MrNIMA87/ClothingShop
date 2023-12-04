@@ -4,7 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ButtonSign extends StatelessWidget {
-  ButtonSign({super.key, required this.title, required this.onPressed});
+  ButtonSign({
+    super.key,
+    required this.title,
+    required this.onPressed,
+  });
   String title;
   final Function() onPressed;
   @override

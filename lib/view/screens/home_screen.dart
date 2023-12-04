@@ -8,7 +8,9 @@ import 'package:clothing_shop/theme/textStyle/home_style.dart';
 import 'package:clothing_shop/view/widgets/category.dart';
 import 'package:clothing_shop/view/widgets/sgin/flash_sale_category.dart';
 import 'package:clothing_shop/view/widgets/slider.dart';
+import 'package:clothing_shop/view/widgets/start_icon.dart';
 import 'package:flutter/material.dart';
+import 'package:expandable_text/expandable_text.dart';
 import 'package:get/get.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -99,7 +101,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   (Dimens.bodyMargin / 3).height,
                   FlashSaleCategory(),
                   (Dimens.bodyMargin / 3).height,
-                //Items Flash Sale
+                  //Items Flash Sale
                   SizedBox(
                     child: GridView.builder(
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -122,14 +124,6 @@ class _HomeScreenState extends State<HomeScreen> {
                               children: [
                                 Container(
                                   decoration: BoxDecoration(
-                                    gradient: const LinearGradient(
-                                      begin: Alignment.topCenter,
-                                      end: Alignment.bottomCenter,
-                                      colors: [
-                                        Colors.red,
-                                        Colors.deepOrange,
-                                      ],
-                                    ),
                                     borderRadius: BorderRadius.circular(
                                         Dimens.bodyMargin),
                                   ),
@@ -167,26 +161,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ),
                                     //Race
 
-                                    Row(
-                                      children: [
-                                        Container(
-                                          width: 10,
-                                          decoration: const ShapeDecoration(
-                                            shape: StarBorder(
-                                              side: BorderSide(
-                                                color: Colors.orange,
-                                                width: 4,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        5.0.width,
-                                        Text(
-                                          productList[index].race!,
-                                          style: GeneralTextStyle.hint
-                                              .copyWith(fontSize: 13),
-                                        )
-                                      ],
+                                    MyStarIcon(selectedIndex: index.obs),
+                                    5.0.width,
+                                    Text(
+                                      productList[index].race,
+                                      style: GeneralTextStyle.hint
+                                          .copyWith(fontSize: 13),
                                     )
                                   ],
                                 ),
@@ -194,7 +174,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Align(
                                   alignment: Alignment.bottomLeft,
                                   child: Text(
-                                    '\$${productList[index].price!}',
+                                    '\$${productList[index].price}',
                                     style: HomeStyle.titleProduct,
                                   ),
                                 )
