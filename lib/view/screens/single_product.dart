@@ -1,27 +1,33 @@
 import 'package:clothing_shop/constant/dimens.dart';
 import 'package:clothing_shop/constant/extension.dart';
 import 'package:clothing_shop/gen/assets.gen.dart';
+import 'package:clothing_shop/methods/home_screen.dart';
 import 'package:clothing_shop/model/products_model.dart';
 import 'package:clothing_shop/theme/colors/general_colors.dart';
 import 'package:clothing_shop/theme/textStyle/general_style.dart';
 import 'package:clothing_shop/theme/textStyle/home_style.dart';
 import 'package:clothing_shop/theme/textStyle/single_product_style.dart';
-import 'package:clothing_shop/view/widgets/divider.dart';
-import 'package:clothing_shop/view/widgets/general/button_sign.dart';
+import 'package:clothing_shop/view/screens/home_screen.dart';
+
 import 'package:clothing_shop/view/widgets/single_product_category.dart';
 import 'package:expandable_text/expandable_text.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/utils.dart';
 
+import '../../constant/lists.dart';
 import '../widgets/select_color.dart';
 import '../widgets/start_icon.dart';
 
 class SingleProduct extends StatelessWidget {
-  SingleProduct({super.key});
-
-  RxInt selectedIndex = 0.obs;
+  SingleProduct({
+    super.key,
+    required this.selectedProductIndex,
+  });
+  RxInt selectedProductIndex;
   RxInt selectedIndexColor = 0.obs;
+
   List selectColor = [
     const Color.fromARGB(246, 114, 72, 57),
     const Color.fromARGB(255, 177, 119, 98),
@@ -45,7 +51,8 @@ class SingleProduct extends StatelessWidget {
                   height: Get.height / 2.2,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage(productList[selectedIndex.value].image),
+                      image: AssetImage(
+                          productList[selectedProductIndex.value].image),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -55,53 +62,7 @@ class SingleProduct extends StatelessWidget {
                         top: 20,
                         right: 0,
                         left: 0,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            //TODO: hatman aks haro avaz kon
-                            //Button for back page
-                            Container(
-                              width: 42,
-                              height: 42,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(1000),
-                                color: Colors.white.withOpacity(0.9),
-                              ),
-                              child: IconButton(
-                                onPressed: () {},
-                                icon: const Icon(
-                                  Icons.arrow_back,
-                                  color: Colors.black87,
-                                  size: 26,
-                                ),
-                              ),
-                            ),
-                            //TODO: Fek konam niaz be edit style bashe
-                            const Text(
-                              'Product Details',
-                              style: HomeStyle.titleSingleProduct,
-                            ),
-                            //Icon for list favorites
-                            Container(
-                              width: 42,
-                              height: 42,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(1000),
-                                color: Colors.white.withOpacity(0.9),
-                              ),
-                              child: Center(
-                                child: IconButton(
-                                  onPressed: () {},
-                                  icon: const Icon(
-                                    Icons.favorite_border,
-                                    size: 26,
-                                    color: Colors.black87,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
+                        child: appBar(getProductIndex: selectedProductIndex),
                       ),
                       //List Images
                       Positioned(
@@ -123,7 +84,8 @@ class SingleProduct extends StatelessWidget {
                                 return Padding(
                                   padding: const EdgeInsets.all(4.0),
                                   child: InkWell(
-                                    onTap: () => selectedIndex.value = index,
+                                    onTap: () =>
+                                        selectedProductIndex.value = index,
                                     child: Container(
                                       width: 50,
                                       height: 40,
@@ -164,7 +126,7 @@ class SingleProduct extends StatelessWidget {
                           textAlign: TextAlign.start,
                         ),
                         MyStarIcon(
-                          selectedIndex: selectedIndex,
+                          selectedIndex: selectedProductIndex,
                         ),
                       ],
                     ),
@@ -173,7 +135,7 @@ class SingleProduct extends StatelessWidget {
                     Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
-                        productList[selectedIndex.value].title,
+                        productList[selectedProductIndex.value].title,
                         style: SingleProductStyle.title,
                       ),
                     ),
@@ -190,7 +152,7 @@ class SingleProduct extends StatelessWidget {
                     Align(
                       alignment: Alignment.centerLeft,
                       child: ExpandableText(
-                        productList[selectedIndex.value].description,
+                        productList[selectedProductIndex.value].description,
                         style: SingleProductStyle.info,
                         expandText: 'Read more',
                         collapseText: 'Show less',
@@ -233,8 +195,9 @@ class SingleProduct extends StatelessWidget {
                     Align(
                       alignment: Alignment.centerLeft,
                       child: SelectedColorCategory(
-                          selectColor: selectColor,
-                          selectedIndexColor: selectedIndexColor),
+                        selectColor: selectColor,
+                        selectedIndexColor: selectedIndexColor,
+                      ),
                     ),
                     //
                     (Dimens.bodyMargin / 2).height,
@@ -258,7 +221,7 @@ class SingleProduct extends StatelessWidget {
                               alignment: Alignment.centerLeft,
                               child: Obx(
                                 () => Text(
-                                  '\$${productList[selectedIndex.value].price}',
+                                  '\$${productList[selectedProductIndex.value].price}',
                                   style: SingleProductStyle.titleInfo.copyWith(
                                       fontWeight: FontWeight.w600, height: 1.3),
                                 ),
@@ -276,6 +239,75 @@ class SingleProduct extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class appBar extends StatelessWidget {
+  appBar({
+    super.key,
+    required this.getProductIndex,
+  });
+
+  RxInt getProductIndex;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        //TODO: hatman aks haro avaz kon
+        //Button for back page
+        Container(
+          width: 42,
+          height: 42,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(1000),
+            color: Colors.white.withOpacity(0.9),
+          ),
+          child: IconButton(
+            onPressed: () {
+              Get.back();
+            },
+            icon: const Icon(
+              Icons.arrow_back,
+              color: Colors.black87,
+              size: 26,
+            ),
+          ),
+        ),
+        //TODO: Fek konam niaz be edit style bashe
+        const Text(
+          'Product Details',
+          style: HomeStyle.titleSingleProduct,
+        ),
+        //Icon for list favorites
+        InkWell(
+          onTap: () {
+            HomeMethod().isFavorite(getProductIndex);
+          },
+          child: Container(
+            margin: const EdgeInsets.all(10),
+            width: 30,
+            height: 30,
+            decoration: BoxDecoration(
+              color: Colors.white.withOpacity(0.7),
+              shape: BoxShape.circle,
+            ),
+            child: Center(
+              child: Obx(
+                () => Icon(
+                  ConstantLists.favoriteList.contains(getProductIndex)
+                      ? CupertinoIcons.heart_fill
+                      : CupertinoIcons.heart,
+                  size: 20,
+                  color: GeneralColors.primaryColor,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

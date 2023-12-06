@@ -10,7 +10,7 @@ import 'package:get_storage/get_storage.dart';
 void main() async {
   await GetStorage.init();
   SystemChrome.setSystemUIOverlayStyle(
-    SystemUiOverlayStyle(
+    const SystemUiOverlayStyle(
       statusBarIconBrightness: Brightness.dark,
       statusBarColor: GeneralColors.bgColor,
       systemNavigationBarColor: GeneralColors.bgColor,
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       locale: const Locale('en'),
       debugShowCheckedModeBanner: false,
       theme: AppThemes.themeData,
-      home: SingleProduct(),
+      home: HomeScreen(),
     );
   }
 }

@@ -1,28 +1,26 @@
 import 'package:clothing_shop/constant/dimens.dart';
 import 'package:clothing_shop/constant/extension.dart';
+import 'package:clothing_shop/constant/lists.dart';
 import 'package:clothing_shop/gen/assets.gen.dart';
+import 'package:clothing_shop/methods/home_screen.dart';
 import 'package:clothing_shop/model/products_model.dart';
 import 'package:clothing_shop/theme/colors/general_colors.dart';
 import 'package:clothing_shop/theme/textStyle/general_style.dart';
 import 'package:clothing_shop/theme/textStyle/home_style.dart';
+import 'package:clothing_shop/view/screens/single_product.dart';
 import 'package:clothing_shop/view/widgets/category.dart';
 import 'package:clothing_shop/view/widgets/sgin/flash_sale_category.dart';
 import 'package:clothing_shop/view/widgets/slider.dart';
 import 'package:clothing_shop/view/widgets/start_icon.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:expandable_text/expandable_text.dart';
 import 'package:get/get.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
 
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
   // ProductController productsController = Get.put(ProductController());
-
   List<String> flashSaleCategoryTitle = [
     'All',
     'Newest',
@@ -31,7 +29,9 @@ class _HomeScreenState extends State<HomeScreen> {
     'Woman',
   ];
 
-  RxInt selectedFlashSaleCateGory = 0.obs;
+  RxInt selectedFlashSaleCateGor = 0.obs;
+
+  RxBool selectFavorite = false.obs;
 
   @override
   Widget build(BuildContext context) {
@@ -102,89 +102,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   FlashSaleCategory(),
                   (Dimens.bodyMargin / 3).height,
                   //Items Flash Sale
-                  SizedBox(
-                    child: GridView.builder(
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisSpacing: 20,
-                        crossAxisCount: 2,
-                        mainAxisSpacing: 30,
-                        childAspectRatio: Get.width / (Get.height / 1.3),
-                      ),
-                      shrinkWrap: true,
-                      physics: const ClampingScrollPhysics(),
-                      itemCount: productList.length,
-                      itemBuilder: (context, index) {
-                        return InkWell(
-                          onTap: () {
-                            selectedFlashSaleCateGory.value = index;
-                            print(selectedFlashSaleCateGory);
-                          },
-                          child: SizedBox(
-                            child: Column(
-                              children: [
-                                Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(
-                                        Dimens.bodyMargin),
-                                  ),
-                                  child: Column(
-                                    children: [
-                                      //image
-                                      Container(
-                                        width: double.maxFinite,
-                                        height: Get.height / 4,
-                                        decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                            image: AssetImage(
-                                              productList[index].image!,
-                                            ),
-                                            fit: BoxFit.cover,
-                                          ),
-                                          borderRadius: const BorderRadius.all(
-                                            Radius.circular(16),
-                                          ),
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                                10.0.height,
-                                //Title and race
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    //title
-                                    Text(
-                                      productList[index].title!,
-                                      style: HomeStyle.titleProduct,
-                                    ),
-                                    //Race
-
-                                    MyStarIcon(selectedIndex: index.obs),
-                                    5.0.width,
-                                    Text(
-                                      productList[index].race,
-                                      style: GeneralTextStyle.hint
-                                          .copyWith(fontSize: 13),
-                                    )
-                                  ],
-                                ),
-                                9.0.height,
-                                Align(
-                                  alignment: Alignment.bottomLeft,
-                                  child: Text(
-                                    '\$${productList[index].price}',
-                                    style: HomeStyle.titleProduct,
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                        );
-                      },
-                    ),
-                  )
+                  Items(),
                 ],
               ),
             ),
@@ -242,6 +160,125 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class Items extends StatelessWidget {
+  Items({
+    super.key,
+  });
+
+  RxInt selectProduct = 0.obs;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      child: GridView.builder(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisSpacing: 20,
+          crossAxisCount: 2,
+          mainAxisSpacing: 30,
+          childAspectRatio: Get.width / (Get.height / 1.3),
+        ),
+        shrinkWrap: true,
+        physics: const ClampingScrollPhysics(),
+        itemCount: productList.length,
+        itemBuilder: (context, index) {
+          return InkWell(
+            onTap: () {
+              selectProduct.value = index;
+              print(selectProduct);
+              Get.to(() => SingleProduct(
+                    selectedProductIndex: selectProduct,
+                  ));
+            },
+            child: SizedBox(
+              child: Column(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(Dimens.bodyMargin),
+                    ),
+                    child: Column(
+                      children: [
+                        //image
+                        Container(
+                          width: double.maxFinite,
+                          height: Get.height / 4,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage(
+                                productList[index].image,
+                              ),
+                              fit: BoxFit.cover,
+                            ),
+                            borderRadius: const BorderRadius.all(
+                              Radius.circular(16),
+                            ),
+                          ),
+                          child: Align(
+                            alignment: Alignment.topRight,
+                            child: InkWell(
+                              onTap: () {
+                                HomeMethod().isFavorite(index.obs);
+                              },
+                              child: Container(
+                                margin: const EdgeInsets.all(10),
+                                width: 30,
+                                height: 30,
+                                decoration: BoxDecoration(
+                                  color: Colors.white.withOpacity(0.7),
+                                  shape: BoxShape.circle,
+                                ),
+                                child: Center(
+                                  child: Obx(
+                                    () => Icon(
+                                      ConstantLists.favoriteList.contains(index)
+                                          ? CupertinoIcons.heart_fill
+                                          : CupertinoIcons.heart,
+                                      size: 20,
+                                      color: GeneralColors.primaryColor,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  10.0.height,
+                  //Title and race
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      //title
+                      Text(
+                        productList[index].title,
+                        style: HomeStyle.titleProduct,
+                      ),
+                      //Race
+
+                      MyStarIcon(selectedIndex: index.obs),
+                      5.0.width,
+                    ],
+                  ),
+                  9.0.height,
+                  Align(
+                    alignment: Alignment.bottomLeft,
+                    child: Text(
+                      '\$${productList[index].price}',
+                      style: HomeStyle.titleProduct,
+                    ),
+                  )
+                ],
+              ),
+            ),
+          );
+        },
       ),
     );
   }
