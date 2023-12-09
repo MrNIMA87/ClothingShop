@@ -30,7 +30,7 @@ class MyStarIcon extends StatelessWidget {
         8.0.width,
         Text(
           productList[selectedIndex.value].race,
-          style: GeneralTextStyle.hint,
+          style: GeneralTextStyle.hint.copyWith(fontSize: 16),
         ),
       ],
     );

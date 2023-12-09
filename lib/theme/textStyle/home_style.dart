@@ -25,7 +25,7 @@ class HomeStyle {
     fontFamily: 'Avenir_Regular',
     fontSize: 18,
     fontWeight: FontWeight.w700,
-    color: Colors.black87,
+    color: Colors.white,
   );
   static const TextStyle flashSaleCategoryTitleNotSelected = TextStyle(
     fontFamily: 'Avenir_Regular',

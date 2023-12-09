@@ -17,6 +17,7 @@ import 'package:get/get.dart';
 import 'package:get/utils.dart';
 
 import '../../constant/lists.dart';
+import '../../model/my_cart_model.dart';
 import '../widgets/select_color.dart';
 import '../widgets/start_icon.dart';
 
@@ -229,7 +230,7 @@ class SingleProduct extends StatelessWidget {
                             ),
                           ],
                         ),
-                        const buyButton(),
+                         buyButton(selectIndex: selectedProductIndex,),
                       ],
                     ),
                   ],
@@ -283,8 +284,8 @@ class appBar extends StatelessWidget {
         ),
         //Icon for list favorites
         InkWell(
-          onTap: () {
-            HomeMethod().isFavorite(getProductIndex);
+          onTap: () async {
+            await HomeMethod().isFavorite(getProductIndex.value);
           },
           child: Container(
             margin: const EdgeInsets.all(10),
@@ -297,7 +298,7 @@ class appBar extends StatelessWidget {
             child: Center(
               child: Obx(
                 () => Icon(
-                  ConstantLists.favoriteList.contains(getProductIndex)
+                  ConstantLists.favoriteList.contains(getProductIndex.value)
                       ? CupertinoIcons.heart_fill
                       : CupertinoIcons.heart,
                   size: 20,
@@ -313,10 +314,11 @@ class appBar extends StatelessWidget {
 }
 
 class buyButton extends StatelessWidget {
-  const buyButton({
+   buyButton({
     super.key,
+    required this.selectIndex,
   });
-
+  RxInt selectIndex = 0.obs;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -333,7 +335,13 @@ class buyButton extends StatelessWidget {
           Icons.shopping_bag,
           size: 25,
         ),
-        onPressed: () {},
+        onPressed: () {
+          myCartProducts.add(MyCartProductModel(
+            title: productList[selectIndex.value].title,
+            price: productList[selectIndex.value].price,
+            size: 'XLL',
+          ));
+        },
         style: const ButtonStyle(
           backgroundColor: MaterialStatePropertyAll(Colors.transparent),
           elevation: MaterialStatePropertyAll(0.0),
