@@ -28,7 +28,6 @@ class HomeScreen extends StatelessWidget {
 
   RxInt selectedFlashSaleCateGor = 0.obs;
 
-  RxBool selectFavorite = false.obs;
 
   @override
   Widget build(BuildContext context) {
@@ -161,4 +160,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-

@@ -36,10 +36,13 @@ class Items extends StatelessWidget {
           return InkWell(
             onTap: () {
               selectProduct.value = index;
+
               print(selectProduct);
               Get.to(() => SingleProduct(
                     selectedProductIndex: selectProduct,
-                  ));
+                  ),
+                  duration: Duration(seconds: 1)
+                  );
             },
             child: SizedBox(
               child: Column(
@@ -69,7 +72,7 @@ class Items extends StatelessWidget {
                             alignment: Alignment.topRight,
                             child: InkWell(
                               onTap: () {
-                                HomeMethod().isFavorite(selectProduct.value);
+                                HomeMethod().isFavorite(index);
                               },
                               child: Container(
                                 margin: const EdgeInsets.all(10),

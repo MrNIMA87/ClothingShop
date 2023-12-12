@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
       locale: const Locale('en'),
       debugShowCheckedModeBanner: false,
       theme: AppThemes.themeData,
-      home: MyCart(),
+      home: HomeScreen(),
     );
   }
 }

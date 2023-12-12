@@ -24,7 +24,7 @@ class GeneralTextStyle {
   );
   static const TextStyle hint = TextStyle(
     fontFamily: 'Avenir_Regular',
-    fontSize: 17,
+    fontSize: 15,
     fontWeight: FontWeight.w600,
     color: GeneralColors.hint,
   );

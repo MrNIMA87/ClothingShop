@@ -17,8 +17,8 @@ class AppBarSinglePage extends StatelessWidget {
       centerTitle: true,
       leading: Container(
         margin: const EdgeInsets.only(left: 10.0),
-        width: 42,
-        height: 42,
+        width: 40,
+        height: 40,
         decoration: BoxDecoration(
           border: Border.all(
             color: const Color.fromARGB(100, 167, 166, 166),

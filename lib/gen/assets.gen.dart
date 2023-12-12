@@ -24,11 +24,14 @@ class $AssetsIconsGen {
   /// File path: assets/icons/search.svg
   String get search => 'assets/icons/search.svg';
 
+  /// File path: assets/icons/success.png
+  AssetGenImage get success => const AssetGenImage('assets/icons/success.png');
+
   /// File path: assets/icons/t-shirt.png
   AssetGenImage get tShirt => const AssetGenImage('assets/icons/t-shirt.png');
 
   /// List of all assets
-  List<dynamic> get values => [dress, jacket, pant, search, tShirt];
+  List<dynamic> get values => [dress, jacket, pant, search, success, tShirt];
 }
 
 class $AssetsImagesGen {
