@@ -4,15 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class FlashSaleCategory extends StatelessWidget {
-  FlashSaleCategory({super.key});
+  FlashSaleCategory({super.key, required this.titleCategory});
 
-  List<String> titleCategory = [
-    'All',
-    'Newest',
-    'Popular',
-    'Man',
-    'Woman',
-  ];
+  RxList titleCategory = [].obs;
   RxInt selectedIndex = 0.obs;
   @override
   Widget build(BuildContext context) {
@@ -31,15 +25,13 @@ class FlashSaleCategory extends StatelessWidget {
             child: Obx(
               () => Container(
                 margin: const EdgeInsets.all(10),
-                padding: const EdgeInsets.all(10),
+                padding: const EdgeInsets.all(11),
                 decoration: BoxDecoration(
-                    borderRadius: const BorderRadius.all(Radius.circular(32)),
+                    borderRadius:  const BorderRadius.all(Radius.circular(32)),
                     color: selectedIndex == index
                         ? GeneralColors.primaryColor
-                        : GeneralColors.bgColor,
-                    border: Border.all(
-                      color: GeneralColors.borderInput,
-                    )),
+                        : GeneralColors.onSelectedCategory,
+                ),
                 child: Center(
                   child: Text(
                     titleCategory[index],

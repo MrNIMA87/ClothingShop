@@ -18,6 +18,13 @@ class FavoriteScreen extends StatelessWidget {
 
   RxInt selectFavoriteProduct = 0.obs;
   RxList favoriteProduct = ConstantLists.favoriteList;
+  RxList<String> titleCategory = [
+    'All',
+    'Newest',
+    'Popular',
+    'Man',
+    'Woman',
+  ].obs;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -31,7 +38,7 @@ class FavoriteScreen extends StatelessWidget {
             padding: const EdgeInsets.all(Dimens.bodyMargin),
             child: Column(
               children: [
-                FlashSaleCategory(),
+                FlashSaleCategory(titleCategory: titleCategory),
                 Dimens.paddingBody.height,
                 SizedBox(
                   child: Obx(

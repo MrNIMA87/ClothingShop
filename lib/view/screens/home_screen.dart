@@ -5,10 +5,10 @@ import 'package:clothing_shop/gen/assets.gen.dart';
 import 'package:clothing_shop/theme/colors/general_colors.dart';
 import 'package:clothing_shop/theme/textStyle/general_style.dart';
 import 'package:clothing_shop/theme/textStyle/home_style.dart';
+import 'package:clothing_shop/view/screens/filter_screen.dart';
 import 'package:clothing_shop/view/widgets/category.dart';
 import 'package:clothing_shop/view/widgets/sgin/flash_sale_category.dart';
 import 'package:clothing_shop/view/widgets/slider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -25,9 +25,14 @@ class HomeScreen extends StatelessWidget {
     'Man',
     'Woman',
   ];
-
+  RxList<String> titleCategory = [
+    'All',
+    'Newest',
+    'Popular',
+    'Man',
+    'Woman',
+  ].obs;
   RxInt selectedFlashSaleCateGor = 0.obs;
-
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +100,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   (Dimens.bodyMargin / 3).height,
-                  FlashSaleCategory(),
+                  FlashSaleCategory(titleCategory: titleCategory),
                   (Dimens.bodyMargin / 3).height,
                   //Items Flash Sale
                   Items(),
@@ -126,8 +131,9 @@ class HomeScreen extends StatelessWidget {
               color: Colors.transparent,
               borderRadius: const BorderRadius.all(Radius.circular(32)),
             ),
-            child: const Center(
-              child: SizedBox(
+            child: InkWell(
+              onTap: () {},
+              child: const SizedBox(
                 // width: Get.width / 1.4,
                 child: TextField(
                   autocorrect: true,
@@ -143,16 +149,22 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
+
           //Filter
-          Container(
-            width: Get.width / 7,
-            height: Get.height / 14,
-            decoration: BoxDecoration(
-              color: GeneralColors.primaryColor,
-              borderRadius: BorderRadius.circular(1000),
-            ),
-            child: const Center(
-              child: Icon(Icons.filter_list),
+          InkWell(
+            onTap: () {
+              Get.to( FilterScreen());
+            },
+            child: Container(
+              width: Get.width / 7,
+              height: Get.height / 14,
+              decoration: BoxDecoration(
+                color: GeneralColors.primaryColor,
+                borderRadius: BorderRadius.circular(1000),
+              ),
+              child: const Center(
+                child: Icon(Icons.filter_list),
+              ),
             ),
           ),
         ],

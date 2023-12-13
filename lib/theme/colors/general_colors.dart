@@ -8,4 +8,6 @@ class GeneralColors {
   static const Color infoColor = Color.fromARGB(160, 0, 0, 0);
   static const Color hint = Color.fromARGB(110, 0, 0, 0);
   static const Color borderInput = Color.fromARGB(40, 0, 55, 128);
+  static Color onSelectedCategory =  Colors.blueGrey[100]!.withOpacity(0.3);
+
 }

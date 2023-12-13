@@ -1,9 +1,6 @@
-import 'package:clothing_shop/theme/colors/general_colors.dart';
-import 'package:clothing_shop/theme/themes.dart';
-import 'package:clothing_shop/view/screens/favorite_screen.dart';
-import 'package:clothing_shop/view/screens/home_screen.dart';
-import 'package:clothing_shop/view/screens/my_cart.dart';
-import 'package:clothing_shop/view/screens/single_product.dart';
+import 'theme/colors/general_colors.dart';
+import "package:clothing_shop/theme/themes.dart";
+import 'package:clothing_shop/view/screens/filter_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -32,7 +29,7 @@ class MyApp extends StatelessWidget {
       locale: const Locale('en'),
       debugShowCheckedModeBanner: false,
       theme: AppThemes.themeData,
-      home: HomeScreen(),
+      home: FilterScreen(),
     );
   }
 }

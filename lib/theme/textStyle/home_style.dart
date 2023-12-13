@@ -29,14 +29,14 @@ class HomeStyle {
   );
   static const TextStyle flashSaleCategoryTitleNotSelected = TextStyle(
     fontFamily: 'Avenir_Regular',
-    fontSize: 15,
-    fontWeight: FontWeight.w700,
+    fontSize: 14,
+    fontWeight: FontWeight.w600,
     color: Colors.black87,
   );
   static const TextStyle flashSaleCategoryTitleOntSelected = TextStyle(
     fontFamily: 'Avenir_Regular',
-    fontSize: 15,
-    fontWeight: FontWeight.w700,
+    fontSize: 14,
+    fontWeight: FontWeight.w600,
     color: Colors.white,
   );
   static const TextStyle seeAll = TextStyle(

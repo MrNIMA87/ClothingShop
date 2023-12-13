@@ -38,11 +38,15 @@ class Items extends StatelessWidget {
               selectProduct.value = index;
 
               print(selectProduct);
-              Get.to(() => SingleProduct(
-                    selectedProductIndex: selectProduct,
-                  ),
-                  duration: Duration(seconds: 1)
-                  );
+              Get.to(
+                () => SingleProduct(
+                  selectedProductIndex: selectProduct,
+                ),
+                duration: const Duration(seconds: 1),
+                fullscreenDialog: true,
+                opaque: true,
+                preventDuplicates: true,
+              );
             },
             child: SizedBox(
               child: Column(
