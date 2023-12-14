@@ -6,11 +6,12 @@ import 'package:clothing_shop/view/widgets/app_bar_single_page.dart';
 import 'package:clothing_shop/view/widgets/sgin/flash_sale_category.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:toastification/toastification.dart';
 
 import '../../theme/textStyle/general_style.dart';
 
 class FilterScreen extends StatefulWidget {
-  FilterScreen({super.key});
+  const FilterScreen({super.key});
 
   @override
   State<FilterScreen> createState() => _FilterScreenState();
@@ -206,6 +207,22 @@ class _FilterScreenState extends State<FilterScreen> {
                     startPricingRange.value = 2.0.toDouble();
                     endPricingRange.value = 20.0.toDouble();
                     selectedIndexReview.value = 0;
+                    toastification.show(
+                      context: context,
+                      type: ToastificationType.success,
+                      style: ToastificationStyle.fillColored,
+                      title: 'Successful purchase',
+                      description: '''Your purchase was successful!
+Thank you for choosing us''',
+                      
+                      showProgressBar: false,
+                      alignment: Alignment.topCenter,
+                      autoCloseDuration: const Duration(seconds: 4),
+                      borderRadius: BorderRadius.circular(12.0),
+                      backgroundColor: GeneralColors.primaryColor,
+                      closeOnClick: false,
+                      dragToClose: true,
+                    );
                   },
                   style: const ButtonStyle(
                     backgroundColor:
