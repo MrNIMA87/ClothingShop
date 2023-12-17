@@ -5,14 +5,14 @@ import 'package:clothing_shop/gen/assets.gen.dart';
 import 'package:clothing_shop/theme/colors/general_colors.dart';
 import 'package:clothing_shop/theme/textStyle/general_style.dart';
 import 'package:clothing_shop/theme/textStyle/home_style.dart';
-import 'package:clothing_shop/view/screens/filter_screen.dart';
+import 'package:clothing_shop/view/screens/others/filter_screen.dart';
 import 'package:clothing_shop/view/widgets/category.dart';
 import 'package:clothing_shop/view/widgets/sgin/flash_sale_category.dart';
 import 'package:clothing_shop/view/widgets/slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../widgets/product_item.dart';
+import '../../widgets/product_item.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});

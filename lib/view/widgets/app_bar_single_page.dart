@@ -1,5 +1,6 @@
+import 'package:clothing_shop/view/widgets/icon_back_page.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:get/state_manager.dart';
 
 import '../../theme/textStyle/home_style.dart';
 
@@ -15,28 +16,7 @@ class AppBarSinglePage extends StatelessWidget {
       backgroundColor: Colors.transparent,
       elevation: 0.0,
       centerTitle: true,
-      leading: Container(
-        margin: const EdgeInsets.only(left: 10.0),
-        width: 40,
-        height: 40,
-        decoration: BoxDecoration(
-          border: Border.all(
-            color: const Color.fromARGB(100, 167, 166, 166),
-            width: 1,
-          ),
-          shape: BoxShape.circle,
-        ),
-        child: IconButton(
-          onPressed: () {
-            Get.back();
-          },
-          icon: const Icon(
-            Icons.arrow_back,
-            color: Colors.black87,
-            size: 26,
-          ),
-        ),
-      ),
+      leading: BackPage(width: 40.0.obs,),
       title:  Text(
         title,
         style: HomeStyle.titleSingleProduct.copyWith(color: Colors.black87),

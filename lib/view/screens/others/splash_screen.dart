@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:clothing_shop/gen/assets.gen.dart';
 import 'package:clothing_shop/theme/colors/general_colors.dart';
 import 'package:clothing_shop/theme/textStyle/splash_style.dart';
-import 'package:clothing_shop/view/screens/welcome_screen.dart';
+import 'package:clothing_shop/view/screens/others/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

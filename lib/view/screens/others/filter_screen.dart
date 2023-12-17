@@ -3,12 +3,13 @@ import 'package:clothing_shop/constant/extension.dart';
 import 'package:clothing_shop/theme/colors/general_colors.dart';
 import 'package:clothing_shop/theme/textStyle/home_style.dart';
 import 'package:clothing_shop/view/widgets/app_bar_single_page.dart';
+import 'package:clothing_shop/view/widgets/notifications/successful_notification.dart';
 import 'package:clothing_shop/view/widgets/sgin/flash_sale_category.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:toastification/toastification.dart';
 
-import '../../theme/textStyle/general_style.dart';
+import '../../../theme/textStyle/general_style.dart';
 
 class FilterScreen extends StatefulWidget {
   const FilterScreen({super.key});
@@ -207,22 +208,8 @@ class _FilterScreenState extends State<FilterScreen> {
                     startPricingRange.value = 2.0.toDouble();
                     endPricingRange.value = 20.0.toDouble();
                     selectedIndexReview.value = 0;
-                    toastification.show(
-                      context: context,
-                      type: ToastificationType.success,
-                      style: ToastificationStyle.fillColored,
-                      title: 'Successful purchase',
-                      description: '''Your purchase was successful!
-Thank you for choosing us''',
-                      
-                      showProgressBar: false,
-                      alignment: Alignment.topCenter,
-                      autoCloseDuration: const Duration(seconds: 4),
-                      borderRadius: BorderRadius.circular(12.0),
-                      backgroundColor: GeneralColors.primaryColor,
-                      closeOnClick: false,
-                      dragToClose: true,
-                    );
+                    sendSuccessfulNotification(
+                        context, 'Rest', 'Filter reset successfully');
                   },
                   style: const ButtonStyle(
                     backgroundColor:
@@ -251,6 +238,8 @@ Thank you for choosing us''',
                 child: ElevatedButton(
                   onPressed: () {
                     Get.back();
+                    sendSuccessfulNotification(context, 'Apply filter',
+                        "The filter was successfully applied to the products");
                   },
                   style: const ButtonStyle(
                     backgroundColor:

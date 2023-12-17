@@ -5,14 +5,14 @@ import 'package:clothing_shop/model/my_cart_model.dart';
 import 'package:clothing_shop/theme/colors/general_colors.dart';
 import 'package:clothing_shop/theme/textStyle/home_style.dart';
 import 'package:clothing_shop/theme/textStyle/single_product_style.dart';
-import 'package:clothing_shop/view/screens/home_screen.dart';
+import 'package:clothing_shop/view/screens/mainScreens/home_screen.dart';
 import 'package:clothing_shop/view/widgets/app_bar_single_page.dart';
 import 'package:clothing_shop/view/widgets/general/button_sign.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../theme/textStyle/general_style.dart';
+import '../../../theme/textStyle/general_style.dart';
 
 class MyCart extends StatefulWidget {
   const MyCart({super.key});

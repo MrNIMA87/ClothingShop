@@ -1,3 +1,5 @@
+import 'package:clothing_shop/view/widgets/notifications/eror_notification.dart';
+import 'package:clothing_shop/view/widgets/notifications/successful_notification.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -5,35 +7,15 @@ import 'package:get/get.dart';
 import '../constant/lists.dart';
 
 class HomeMethod {
-  isFavorite(int index) {
+  isFavorite(int index, context) {
     if (ConstantLists.favoriteList.contains(index)) {
       ConstantLists.favoriteList.remove(index);
-      Get.snackbar(
-        'Favorite',
-        'This Product Remove You\'re Favorite',
-        backgroundGradient: LinearGradient(
-          colors: [
-            Colors.black,
-            Colors.black87,
-          ],
-        ),
-        barBlur: 2,
-        icon: Icon(Icons.remove_circle_outline),
-      );
+      sendErrorNotification(
+          context, 'Favorite', 'This Product Remove You\'re Favorite');
     } else {
       ConstantLists.favoriteList.add(index);
-      Get.snackbar(
-        'Favorite',
-        'This Product Add You\'re Favorite',
-        backgroundGradient: LinearGradient(
-          colors: [
-            Colors.black,
-            Colors.black87,
-          ],
-        ),
-        barBlur: 2,
-        icon: Icon(Icons.add_circle_outline),
-      );
+      sendSuccessfulNotification(
+          context, 'Favorite', 'This Product Add You\'re Favorite');
     }
   }
 }

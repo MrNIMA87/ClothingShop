@@ -1,17 +1,17 @@
 import 'package:clothing_shop/constant/dimens.dart';
 import 'package:clothing_shop/constant/extension.dart';
 import 'package:clothing_shop/methods/home_screen.dart';
-import 'package:clothing_shop/view/screens/single_product.dart';
+import 'package:clothing_shop/view/screens/mainScreens/single_product.dart';
 import 'package:clothing_shop/view/widgets/sgin/flash_sale_category.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../constant/lists.dart';
-import '../../model/products_model.dart';
-import '../../theme/colors/general_colors.dart';
-import '../../theme/textStyle/home_style.dart';
-import '../widgets/app_bar_single_page.dart';
-import '../widgets/start_icon.dart';
+import '../../../constant/lists.dart';
+import '../../../model/products_model.dart';
+import '../../../theme/colors/general_colors.dart';
+import '../../../theme/textStyle/home_style.dart';
+import '../../widgets/app_bar_single_page.dart';
+import '../../widgets/start_icon.dart';
 
 class FavoriteScreen extends StatelessWidget {
   FavoriteScreen({super.key});
@@ -97,7 +97,7 @@ class FavoriteScreen extends StatelessWidget {
                                             alignment: Alignment.topRight,
                                             child: InkWell(
                                               onTap: () {
-                                                HomeMethod().isFavorite(index);
+                                                HomeMethod().isFavorite(index, context);
                                               },
                                               child: Container(
                                                 margin:

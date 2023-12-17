@@ -7,7 +7,7 @@ import 'package:clothing_shop/theme/colors/general_colors.dart';
 import 'package:clothing_shop/theme/textStyle/general_style.dart';
 import 'package:clothing_shop/theme/textStyle/home_style.dart';
 import 'package:clothing_shop/theme/textStyle/single_product_style.dart';
-import 'package:clothing_shop/view/screens/home_screen.dart';
+import 'package:clothing_shop/view/screens/mainScreens/home_screen.dart';
 
 import 'package:clothing_shop/view/widgets/single_product_category.dart';
 import 'package:expandable_text/expandable_text.dart';
@@ -16,10 +16,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/utils.dart';
 
-import '../../constant/lists.dart';
-import '../../model/my_cart_model.dart';
-import '../widgets/select_color.dart';
-import '../widgets/start_icon.dart';
+import '../../../constant/lists.dart';
+import '../../../model/my_cart_model.dart';
+import '../../widgets/icon_back_page.dart';
+import '../../widgets/select_color.dart';
+import '../../widgets/start_icon.dart';
 
 class SingleProduct extends StatelessWidget {
   SingleProduct({
@@ -259,24 +260,7 @@ class appBar extends StatelessWidget {
       children: [
         //TODO: hatman aks haro avaz kon
         //Button for back page
-        Container(
-          width: 42,
-          height: 42,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(1000),
-            color: Colors.white.withOpacity(0.9),
-          ),
-          child: IconButton(
-            onPressed: () {
-              Get.back();
-            },
-            icon: const Icon(
-              Icons.arrow_back,
-              color: Colors.black87,
-              size: 26,
-            ),
-          ),
-        ),
+             BackPage(width: 50.0.obs),
         //TODO: Fek konam niaz be edit style bashe
         const Text(
           'Product Details',
@@ -285,7 +269,8 @@ class appBar extends StatelessWidget {
         //Icon for list favorites
         InkWell(
           onTap: () async {
-            await HomeMethod().isFavorite(getProductIndex.value);
+            await HomeMethod().isFavorite(getProductIndex.value, context);
+          
           },
           child: Container(
             margin: const EdgeInsets.all(10),

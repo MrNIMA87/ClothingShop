@@ -10,7 +10,7 @@ import '../../constant/lists.dart';
 import '../../model/products_model.dart';
 import '../../theme/colors/general_colors.dart';
 import '../../theme/textStyle/home_style.dart';
-import '../screens/single_product.dart';
+import '../screens/mainScreens/single_product.dart';
 
 class Items extends StatelessWidget {
   Items({
@@ -76,7 +76,7 @@ class Items extends StatelessWidget {
                             alignment: Alignment.topRight,
                             child: InkWell(
                               onTap: () {
-                                HomeMethod().isFavorite(index);
+                                HomeMethod().isFavorite(index, context);
                               },
                               child: Container(
                                 margin: const EdgeInsets.all(10),

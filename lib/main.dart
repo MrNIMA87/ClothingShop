@@ -1,6 +1,8 @@
+import 'package:clothing_shop/view/screens/others/messenger.dart';
+
 import 'theme/colors/general_colors.dart';
 import "package:clothing_shop/theme/themes.dart";
-import 'package:clothing_shop/view/screens/filter_screen.dart';
+import 'package:clothing_shop/view/screens/others/filter_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -29,7 +31,7 @@ class MyApp extends StatelessWidget {
       locale: const Locale('en'),
       debugShowCheckedModeBanner: false,
       theme: AppThemes.themeData,
-      home: FilterScreen(),
+      home: const Messenger(),
     );
   }
 }
