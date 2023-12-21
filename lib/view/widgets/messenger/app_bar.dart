@@ -2,6 +2,7 @@ import 'package:clothing_shop/constant/extension.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../gen/assets.gen.dart';
 import '../../../model/chat_model.dart';
 import '../../../theme/textStyle/chat_style.dart';
 import '../icon_back_page.dart';
@@ -24,7 +25,7 @@ messengerAppBar() {
                 shape: BoxShape.circle,
                 image: DecorationImage(
                   //TODO: inja bayad data ro az user begiri na az list(Socket)
-                  image: AssetImage(messages.last.image),
+                  image: AssetImage(Assets.images.explore21.path),
                   fit: BoxFit.cover,
                 ),
               ),

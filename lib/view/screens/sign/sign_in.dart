@@ -12,15 +12,17 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../widgets/general/forget_password.dart';
+
 class SignIn extends StatelessWidget {
   SignIn({super.key});
 
   RxBool visiblePassword = true.obs;
-  TextEditingController? emailTextEditingController;
-  TextEditingController? passwordTextEditingController;
+  TextEditingController emailTextEditingController = TextEditingController();
+  TextEditingController passwordTextEditingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: SafeArea(
         child: Scaffold(
@@ -49,7 +51,7 @@ class SignIn extends StatelessWidget {
                     children: [
                       //Input Email
                       SignInput(
-                        textEditingController: emailTextEditingController!,
+                        textEditingController: emailTextEditingController,
                         title: 'Email',
                         hint: SignInStrings.hintTextEmail,
                         Icon: const Icon(Icons.email_outlined),
@@ -61,7 +63,7 @@ class SignIn extends StatelessWidget {
                       //Input Password
                       Obx(
                         () => SignInput(
-                          textEditingController: passwordTextEditingController!,
+                          textEditingController: passwordTextEditingController,
                           title: 'Password',
                           hint: '******************',
                           Icon: IconButton(
@@ -80,27 +82,7 @@ class SignIn extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Padding(
-                    padding: EdgeInsets.only(
-                        left: Get.width / 2, bottom: Dimens.bodyMargin, top: 8),
-                    child: Container(
-                      height: Get.height / 25,
-                      width: Get.width / 2.6,
-                      decoration: const BoxDecoration(
-                          border: Border(
-                              bottom: BorderSide(
-                        color: GeneralColors.primaryColor,
-                      ))),
-                      child: TextButton(
-                        onPressed: () {},
-                        child: const Text(
-                          'Forget Password?',
-                          style: SignInStyle.forgetPassword,
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ),
-                  ),
+                 const ForgetPassword(),
                   //button SignIn
                   ButtonSign(
                     title: 'Sign In',

@@ -7,11 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:otp_text_field/otp_field.dart';
-import 'package:otp_text_field/style.dart';
-import '../../../constant/Strings/sign_up_strings.dart';
 import '../../../constant/Strings/verify_code_strings.dart';
 import '../../../constant/dimens.dart';
-import '../../../theme/textStyle/sgin_in_style.dart';
 import '../../widgets/sgin/verify_input.dart';
 
 class VerifyCodeScreen extends StatelessWidget {
@@ -19,7 +16,7 @@ class VerifyCodeScreen extends StatelessWidget {
   OtpFieldController otpFieldController = OtpFieldController();
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: SafeArea(
         child: Scaffold(

@@ -39,8 +39,6 @@ class MessengerTextField extends StatelessWidget {
                 messages.add(ChatModel(
                   textMessage: value,
                   time: '${DateTime.now().hour}:${DateTime.now().minute}',
-                  name: 'Nima Shamsi',
-                  image: Assets.images.explore22.path,
                   oppositeUser: false,
                 ));
                 FocusManager.instance.primaryFocus?.unfocus();

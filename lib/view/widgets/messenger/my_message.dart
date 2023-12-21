@@ -1,4 +1,5 @@
 import 'package:clothing_shop/constant/extension.dart';
+import 'package:clothing_shop/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -17,7 +18,7 @@ class MyMessage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: 75, top: 6),
+      margin: const EdgeInsets.only(left: 75, top: 6),
       decoration: BoxDecoration(
         boxShadow: [boxShadow],
       ),
@@ -47,7 +48,7 @@ class MyMessage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               //Time Send Message
-              
+
               Text(
                 '${messages[index.value].time} pm',
                 style: ChatTextStyle.timeSendMessage,
@@ -62,14 +63,13 @@ class MyMessage extends StatelessWidget {
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   image: DecorationImage(
-                    image: AssetImage(messages[index.value].image),
+                    image: AssetImage(Assets.images.explore1.path),
                     fit: BoxFit.cover,
                   ),
                 ),
               ),
             ],
           ),
-          
         ],
       ),
     );

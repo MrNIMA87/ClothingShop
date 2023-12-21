@@ -22,11 +22,11 @@ class ChatTextStyle {
   );
   static const TextStyle oppositeUserMessage = TextStyle(
     fontFamily: 'Avenir_Regular',
-    fontSize: 15,
-    fontWeight: FontWeight.w500,
+    fontSize: 13,
+    fontWeight: FontWeight.w600,
     letterSpacing: 0.9,
     height: 1.3,
-    color: Colors.black,
+    color: Colors.black87,
   );
   static const TextStyle myMessage = TextStyle(
     fontFamily: 'Avenir_Regular',

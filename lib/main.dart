@@ -1,8 +1,10 @@
-import 'package:clothing_shop/view/screens/others/messenger.dart';
+
+import 'package:clothing_shop/view/screens/others/profile_setting/privacy_policy.dart';
+import 'package:clothing_shop/view/screens/others/splash_screen.dart';
+
 
 import 'theme/colors/general_colors.dart';
 import "package:clothing_shop/theme/themes.dart";
-import 'package:clothing_shop/view/screens/others/filter_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -31,7 +33,7 @@ class MyApp extends StatelessWidget {
       locale: const Locale('en'),
       debugShowCheckedModeBanner: false,
       theme: AppThemes.themeData,
-      home: const Messenger(),
+      home: PrivacyPolicy(),
     );
   }
 }

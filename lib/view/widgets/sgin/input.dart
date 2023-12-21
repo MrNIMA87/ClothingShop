@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:clothing_shop/constant/dimens.dart';
 import 'package:clothing_shop/constant/extension.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -21,30 +22,32 @@ class SignInput extends StatelessWidget {
     required this.textEditingController,
     required this.emailChecker,
   });
-  final title;
-  final hint;
+  String title = 'Title';
+  String hint = 'Hint';
   final Icon;
-  final TextEditingController textEditingController;
-  TextInputType textInputType;
-  RxBool emailChecker;
-  RxBool visiblePassword;
-  RxString? valueInput;
+   TextEditingController textEditingController = TextEditingController();
+  TextInputType textInputType = TextInputType.text;
+  RxBool emailChecker = false.obs;
+  RxBool visiblePassword = false.obs;
+  RxString valueInput = 'test'.obs;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         SizedBox(
             width: double.maxFinite,
+            //title
             child: Text(
               title,
               textAlign: TextAlign.start,
               style: SignInStyle.titleTextField,
             )),
         10.0.height,
+        //input
         Container(
           padding: const EdgeInsets.only(left: 15.0),
           width: double.maxFinite,
-          height: Get.height / 14,
+          height: Get.height / 15,
           decoration: BoxDecoration(
             border: Border.all(
               width: 1,
@@ -52,7 +55,7 @@ class SignInput extends StatelessWidget {
             ),
             color: Colors.transparent,
             borderRadius: const BorderRadius.all(
-              Radius.circular(100),
+              Radius.circular(15),
             ),
           ),
           child: Center(
@@ -62,8 +65,8 @@ class SignInput extends StatelessWidget {
               keyboardType: textInputType,
               autocorrect: true,
               onChanged: (value) {
-                valueInput?.value = value.toString();
-                log(valueInput!.value);
+                valueInput.value = value.toString();
+                log(valueInput.value);
               },
               decoration: InputDecoration(
                 border: InputBorder.none,
@@ -75,6 +78,8 @@ class SignInput extends StatelessWidget {
             ),
           ),
         ),
+       
+        
       ],
     );
   }

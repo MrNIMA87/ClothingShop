@@ -1,10 +1,8 @@
 import 'package:clothing_shop/constant/dimens.dart';
 import 'package:clothing_shop/constant/extension.dart';
-import 'package:clothing_shop/gen/assets.gen.dart';
 import 'package:clothing_shop/model/chat_model.dart';
 import 'package:clothing_shop/theme/colors/general_colors.dart';
 import 'package:clothing_shop/theme/textStyle/chat_style.dart';
-import 'package:clothing_shop/theme/textStyle/general_style.dart';
 import 'package:clothing_shop/view/widgets/messenger/my_message.dart';
 import 'package:clothing_shop/view/widgets/messenger/text_field.dart';
 import 'package:flutter/material.dart';
@@ -20,8 +18,8 @@ class Messenger extends StatelessWidget {
   Widget build(BuildContext context) {
 
     BoxShadow boxShadow = BoxShadow(
-      color: Colors.blueGrey.withOpacity(0.09),
-      spreadRadius: 10,
+      color: Colors.blueGrey.withOpacity(0.10),
+      spreadRadius: 20,
       blurRadius: 50,
       offset: const Offset(0, 0),
     );
