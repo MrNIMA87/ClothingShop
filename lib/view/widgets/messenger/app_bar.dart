@@ -24,7 +24,6 @@ messengerAppBar() {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 image: DecorationImage(
-                  //TODO: inja bayad data ro az user begiri na az list(Socket)
                   image: AssetImage(Assets.images.explore21.path),
                   fit: BoxFit.cover,
                 ),

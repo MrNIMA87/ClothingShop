@@ -1,6 +1,9 @@
 
+import 'package:clothing_shop/view/screens/mainScreens/main_screen.dart';
+import 'package:clothing_shop/view/screens/others/profile_setting/invite_friend.dart';
 import 'package:clothing_shop/view/screens/others/profile_setting/privacy_policy.dart';
 import 'package:clothing_shop/view/screens/others/splash_screen.dart';
+import 'package:clothing_shop/view/screens/sign/sign_in.dart';
 
 
 import 'theme/colors/general_colors.dart';
@@ -33,7 +36,7 @@ class MyApp extends StatelessWidget {
       locale: const Locale('en'),
       debugShowCheckedModeBanner: false,
       theme: AppThemes.themeData,
-      home: PrivacyPolicy(),
+      home: SignIn(),
     );
   }
 }

@@ -12,8 +12,20 @@ import 'package:flutter/widgets.dart';
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/Apple_icon.png
+  AssetGenImage get appleIcon =>
+      const AssetGenImage('assets/icons/Apple_icon.png');
+
   /// File path: assets/icons/dress.png
   AssetGenImage get dress => const AssetGenImage('assets/icons/dress.png');
+
+  /// File path: assets/icons/faceBook_icon.png
+  AssetGenImage get faceBookIcon =>
+      const AssetGenImage('assets/icons/faceBook_icon.png');
+
+  /// File path: assets/icons/google_icon.png
+  AssetGenImage get googleIcon =>
+      const AssetGenImage('assets/icons/google_icon.png');
 
   /// File path: assets/icons/jacket.png
   AssetGenImage get jacket => const AssetGenImage('assets/icons/jacket.png');
@@ -31,7 +43,17 @@ class $AssetsIconsGen {
   AssetGenImage get tShirt => const AssetGenImage('assets/icons/t-shirt.png');
 
   /// List of all assets
-  List<dynamic> get values => [dress, jacket, pant, search, success, tShirt];
+  List<dynamic> get values => [
+        appleIcon,
+        dress,
+        faceBookIcon,
+        googleIcon,
+        jacket,
+        pant,
+        search,
+        success,
+        tShirt
+      ];
 }
 
 class $AssetsImagesGen {

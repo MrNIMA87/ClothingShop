@@ -40,8 +40,7 @@ class SingleProduct extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
+    return  Scaffold(
         backgroundColor: GeneralColors.bgColor,
         body: SingleChildScrollView(
           child: Column(
@@ -240,7 +239,7 @@ class SingleProduct extends StatelessWidget {
             ],
           ),
         ),
-      ),
+      
     );
   }
 }

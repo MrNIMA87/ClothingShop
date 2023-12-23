@@ -46,11 +46,18 @@ class ProfileStyle {
     fontWeight: FontWeight.w600,
     color: GeneralColors.primaryColor,
   );
-    static const TextStyle bodyPrivacy = TextStyle(
+  static const TextStyle bodyPrivacy = TextStyle(
     fontFamily: 'Avenir_Regular',
     color: Colors.black45,
     fontSize: 15,
     height: 1.2,
     fontWeight: FontWeight.w600,
+  );
+  //Invite
+  static const TextStyle trailing = TextStyle(
+    fontFamily: 'Avenir_Regular',
+    fontSize: 12,
+    fontWeight: FontWeight.w600,
+    color: Colors.white,
   );
 }

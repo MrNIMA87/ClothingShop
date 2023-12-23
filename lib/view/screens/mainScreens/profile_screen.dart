@@ -4,8 +4,13 @@ import 'package:clothing_shop/view/widgets/app_bar_single_page.dart';
 import 'package:clothing_shop/view/widgets/profile/top_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-import '../../../widgets/profile/choice.dart';
+import '../../widgets/profile/choice.dart';
+import '../others/profile_setting/help_center.dart';
+import '../others/profile_setting/invite_friend.dart';
+import '../others/profile_setting/privacy_policy.dart';
+import '../others/profile_setting/stteings.dart';
 
 class ProfileScreen extends StatelessWidget {
   ProfileScreen({super.key});
@@ -31,6 +36,16 @@ class ProfileScreen extends StatelessWidget {
     'Invite Friends',
     'Log out',
   ];
+  //pages
+  List<Widget> screens = [
+    const InviteFriendScreen(),
+    const InviteFriendScreen(),
+    const InviteFriendScreen(),
+    SettingScreen(),
+    HelpCenterScreen(),
+    const PrivacyPolicy(),
+    const InviteFriendScreen(),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,10 +60,22 @@ class ProfileScreen extends StatelessWidget {
           children: [
             const TopPageProfileScreen(),
             (Dimens.paddingBody * 1.5).height,
-            ChoiceProfileScreen(
-              iconList: iconList,
-              titleList: titleList,
-            )
+            //Items
+            Expanded(
+                child: ListView.builder(
+              itemCount: titleList.length,
+              itemBuilder: (context, index) {
+                return InkWell(
+                  onTap: () {
+                    Get.to(() => screens[index]);
+                  },
+                  child: ChoiceProfileScreen(
+                    icon: iconList[index],
+                    title: titleList[index],
+                  ),
+                );
+              },
+            ))
           ],
         ),
       ),

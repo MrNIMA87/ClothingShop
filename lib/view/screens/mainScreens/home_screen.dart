@@ -36,14 +36,14 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: GestureDetector(
-        onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
-        child: Scaffold(
-          //appBar
-          appBar: appBar(),
-          backgroundColor: GeneralColors.bgColor,
-          body: SingleChildScrollView(
+    return GestureDetector(
+      onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+      child: Scaffold(
+        //appBar
+        appBar: appBar(),
+        backgroundColor: GeneralColors.bgColor,
+        body: SafeArea(
+          child: SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
             child: Padding(
               padding: const EdgeInsets.all(Dimens.bodyMargin),
@@ -153,7 +153,7 @@ class HomeScreen extends StatelessWidget {
           //Filter
           InkWell(
             onTap: () {
-              Get.to( FilterScreen());
+              Get.to(FilterScreen());
             },
             child: Container(
               width: Get.width / 7,

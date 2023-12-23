@@ -2,6 +2,7 @@ import 'package:clothing_shop/constant/dimens.dart';
 import 'package:clothing_shop/constant/extension.dart';
 import 'package:clothing_shop/view/widgets/general/button_sign.dart';
 import 'package:clothing_shop/view/widgets/general/forget_password.dart';
+import 'package:clothing_shop/view/widgets/notifications/successful_notification.dart';
 import 'package:clothing_shop/view/widgets/sgin/input.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -97,8 +98,13 @@ class PasswordManager extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: Padding(
-        padding: EdgeInsets.all(Dimens.paddingBody),
-        child: ButtonSign(title: 'Change Password', onPressed: () {}),
+        padding: const EdgeInsets.all(Dimens.paddingBody),
+        child: ButtonSign(
+            title: 'Change Password',
+            onPressed: () {
+              sendSuccessfulNotification(
+                  context, 'Change Password', 'You\'re Password changed');
+            }),
       ),
     );
   }
