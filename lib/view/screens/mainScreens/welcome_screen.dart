@@ -5,6 +5,7 @@ import 'package:clothing_shop/gen/assets.gen.dart';
 import 'package:clothing_shop/theme/colors/general_colors.dart';
 import 'package:clothing_shop/theme/textStyle/welcome_style.dart';
 import 'package:clothing_shop/view/screens/sign/sign_in.dart';
+import 'package:clothing_shop/view/widgets/notifications/eror_notification.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -116,7 +117,10 @@ class WelcomeScreen extends StatelessWidget {
                   backgroundColor: MaterialStatePropertyAll(Colors.transparent),
                   elevation: MaterialStatePropertyAll(0),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  sendErrorNotification(context, 'Not Registered',
+                      'You have an active account and you need to register');
+                },
                 child: Container(
                   width: double.maxFinite,
                   height: Get.height / 14,

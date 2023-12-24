@@ -35,7 +35,7 @@ class HelpCenterScreen extends StatelessWidget {
   //
 
   //
-  RxInt selectedTopCategory = 1.obs;
+  RxInt selectedTopCategory = 0.obs;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

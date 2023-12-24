@@ -1,9 +1,8 @@
 
 import 'package:clothing_shop/view/screens/mainScreens/main_screen.dart';
-import 'package:clothing_shop/view/screens/others/profile_setting/invite_friend.dart';
-import 'package:clothing_shop/view/screens/others/profile_setting/privacy_policy.dart';
-import 'package:clothing_shop/view/screens/others/splash_screen.dart';
-import 'package:clothing_shop/view/screens/sign/sign_in.dart';
+import 'package:clothing_shop/view/screens/mainScreens/on_boarding.dart';
+import 'package:clothing_shop/view/screens/mainScreens/welcome_screen.dart';
+
 
 
 import 'theme/colors/general_colors.dart';
@@ -33,10 +32,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      locale: const Locale('en'),
       debugShowCheckedModeBanner: false,
       theme: AppThemes.themeData,
-      home: SignIn(),
+      home: MainScreen(),
     );
   }
 }

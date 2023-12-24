@@ -15,6 +15,6 @@ sendErrorNotification(context, String title, String description) {
     backgroundColor: GeneralColors.primaryColor,
     closeOnClick: false,
     dragToClose: true,
+    showProgressBar: false,
   );
-  
 }

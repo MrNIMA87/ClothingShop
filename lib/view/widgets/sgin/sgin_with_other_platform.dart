@@ -9,7 +9,7 @@ import '../../../gen/assets.gen.dart';
 
 class OtherSign extends StatelessWidget {
   OtherSign({super.key, required this.title});
-  final title;
+  String title = '';
   List<String> icons = [
     Assets.icons.appleIcon.path,
     Assets.icons.googleIcon.path,
@@ -39,14 +39,13 @@ class OtherSign extends StatelessWidget {
                       itemCount: 3,
                       itemBuilder: (context, index) {
                         return Container(
-                          width: 60,
-                          height: 60,
+                          width: 30,
                           decoration: const BoxDecoration(
                             shape: BoxShape.circle,
                           ),
                           child: Image(
                             image: AssetImage(icons[index]),
-                            fit: BoxFit.cover,
+                            fit: BoxFit.fill,
                           ),
                         );
                       },

@@ -15,7 +15,7 @@ class MyCartProductButton extends StatelessWidget {
   final IconData icon;
   final Alignment alignment;
   RxBool isRemoveButton = false.obs;
-  RxInt numberProduct = 1.obs;
+  RxInt numberProduct = 0.obs;
 
   @override
   Widget build(BuildContext context) {

@@ -107,6 +107,18 @@ class $AssetsImagesGen {
   AssetGenImage get explore5 =>
       const AssetGenImage('assets/images/explore_5.jpg');
 
+  /// File path: assets/images/onboarding_1.png
+  AssetGenImage get onboarding1 =>
+      const AssetGenImage('assets/images/onboarding_1.png');
+
+  /// File path: assets/images/onboarding_2.png
+  AssetGenImage get onboarding2 =>
+      const AssetGenImage('assets/images/onboarding_2.png');
+
+  /// File path: assets/images/onboarding_3.png
+  AssetGenImage get onboarding3 =>
+      const AssetGenImage('assets/images/onboarding_3.png');
+
   /// File path: assets/images/splash.png
   AssetGenImage get splash => const AssetGenImage('assets/images/splash.png');
 
@@ -136,6 +148,9 @@ class $AssetsImagesGen {
         explore41,
         explore42,
         explore5,
+        onboarding1,
+        onboarding2,
+        onboarding3,
         splash,
         welcome1,
         welcome2,

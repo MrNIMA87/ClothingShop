@@ -1,19 +1,32 @@
+import 'dart:math';
+
 import 'package:clothing_shop/constant/data_base/user_info.dart';
 import 'package:clothing_shop/constant/extension.dart';
 import 'package:clothing_shop/theme/colors/general_colors.dart';
 import 'package:clothing_shop/theme/textStyle/verify_code_style.dart';
+import 'package:clothing_shop/view/screens/mainScreens/main_screen.dart';
+import 'package:clothing_shop/view/screens/mainScreens/profile_screen.dart';
 import 'package:clothing_shop/view/widgets/general/button_sign.dart';
+import 'package:clothing_shop/view/widgets/notifications/eror_notification.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:otp_text_field/otp_field.dart';
+import 'package:toastification/toastification.dart';
 import '../../../constant/Strings/verify_code_strings.dart';
 import '../../../constant/dimens.dart';
 import '../../widgets/sgin/verify_input.dart';
 
-class VerifyCodeScreen extends StatelessWidget {
-  VerifyCodeScreen({super.key});
+class VerifyCodeScreen extends StatefulWidget {
+  const VerifyCodeScreen({super.key});
+
+  @override
+  State<VerifyCodeScreen> createState() => _VerifyCodeScreenState();
+}
+
+class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
   OtpFieldController otpFieldController = OtpFieldController();
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -69,9 +82,9 @@ class VerifyCodeScreen extends StatelessWidget {
                         style: VerifyCodeStyle.info,
                         textAlign: TextAlign.center,
                       ),
-                      5.0.height,
+                      10.0.height,
                       Text(
-                        GetStorage().read(UserInfo.email),
+                        'email@gmail.com',
                         style: VerifyCodeStyle.resendCode,
                       )
                     ],
@@ -93,7 +106,20 @@ class VerifyCodeScreen extends StatelessWidget {
                                 bottom: BorderSide(
                                     color: GeneralColors.primaryColor))),
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            toastification.show(
+                              context: context,
+                              type: ToastificationType.info,
+                              style: ToastificationStyle.fillColored,
+                              title: Random().nextInt(9999).toString(),
+                              alignment: Alignment.topCenter,
+                              autoCloseDuration: const Duration(seconds: 10),
+                              borderRadius: BorderRadius.circular(12.0),
+                              backgroundColor: GeneralColors.primaryColor,
+                              closeOnClick: false,
+                              dragToClose: true,
+                            );
+                          },
                           child: const Text(
                             'Resend Code',
                             style: VerifyCodeStyle.resendCode,
@@ -105,7 +131,9 @@ class VerifyCodeScreen extends StatelessWidget {
                   Dimens.bodyMargin.height,
                   ButtonSign(
                     title: 'Verify',
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.to(() => MainScreen());
+                    },
                   )
                 ],
               ),

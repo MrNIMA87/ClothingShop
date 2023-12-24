@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:clothing_shop/constant/Strings/sign_in_strings.dart';
 import 'package:clothing_shop/constant/dimens.dart';
 import 'package:clothing_shop/constant/extension.dart';
@@ -11,7 +13,7 @@ import 'package:clothing_shop/view/widgets/sgin/sgin_with_other_platform.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+import 'package:toastification/toastification.dart';
 import '../../widgets/general/forget_password.dart';
 
 class SignIn extends StatelessWidget {
@@ -82,16 +84,29 @@ class SignIn extends StatelessWidget {
                       ),
                     ],
                   ),
-                 const ForgetPassword(),
+                  const ForgetPassword(),
                   //button SignIn
                   ButtonSign(
                     title: 'Sign In',
                     onPressed: () {
-                      Get.to(VerifyCodeScreen());
+                      Get.to(()=> VerifyCodeScreen());
+                      toastification.show(
+                        context: context,
+                        type: ToastificationType.info,
+                        style: ToastificationStyle.fillColored,
+                        title: Random().nextInt(9999).toString(),
+                        alignment: Alignment.topCenter,
+                        autoCloseDuration: const Duration(seconds: 10),
+                        borderRadius: BorderRadius.circular(12.0),
+                        backgroundColor: GeneralColors.primaryColor,
+                        closeOnClick: false,
+                        dragToClose: true,
+                      );
                     },
                   ),
+
                   //LOGIN WITH OTHER PLATFORM
-                   OtherSign(title: 'Or sign in with')
+                  //TODO: OtherSign(title: 'Or sign in with')
                 ],
               ),
             ),
