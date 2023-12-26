@@ -1,12 +1,9 @@
-import 'dart:developer';
 
 import 'package:clothing_shop/constant/extension.dart';
 import 'package:clothing_shop/theme/textStyle/general_style.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
 
-import '../../../constant/Strings/sign_in_strings.dart';
 import '../../../theme/colors/general_colors.dart';
 import '../../../theme/textStyle/sgin_in_style.dart';
 
@@ -20,7 +17,7 @@ class EmailInput extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(
+        const SizedBox(
             width: double.maxFinite,
             child: Text(
               'Email',
@@ -48,7 +45,7 @@ class EmailInput extends StatelessWidget {
               keyboardType: TextInputType.emailAddress,
               autocorrect: true,
               onChanged: (value) {},
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 border: InputBorder.none,
                 hintText: 'nimashamsi1400@gmail.com',
                 hintStyle: GeneralTextStyle.hint,

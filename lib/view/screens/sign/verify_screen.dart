@@ -1,16 +1,12 @@
 import 'dart:math';
 
-import 'package:clothing_shop/constant/data_base/user_info.dart';
 import 'package:clothing_shop/constant/extension.dart';
 import 'package:clothing_shop/theme/colors/general_colors.dart';
 import 'package:clothing_shop/theme/textStyle/verify_code_style.dart';
 import 'package:clothing_shop/view/screens/mainScreens/main_screen.dart';
-import 'package:clothing_shop/view/screens/mainScreens/profile_screen.dart';
 import 'package:clothing_shop/view/widgets/general/button_sign.dart';
-import 'package:clothing_shop/view/widgets/notifications/eror_notification.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
 import 'package:otp_text_field/otp_field.dart';
 import 'package:toastification/toastification.dart';
 import '../../../constant/Strings/verify_code_strings.dart';
@@ -44,7 +40,7 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(1000),
                     border: Border.all(
-                      color: Color.fromARGB(88, 158, 158, 158),
+                      color: const Color.fromARGB(88, 158, 158, 158),
                       width: 1.5,
                     ),
                   ),
@@ -77,13 +73,13 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
                   //Text Info
                   Column(
                     children: [
-                      Text(
+                      const Text(
                         VerifyCodeStrings.info,
                         style: VerifyCodeStyle.info,
                         textAlign: TextAlign.center,
                       ),
                       10.0.height,
-                      Text(
+                      const Text(
                         'email@gmail.com',
                         style: VerifyCodeStyle.resendCode,
                       )

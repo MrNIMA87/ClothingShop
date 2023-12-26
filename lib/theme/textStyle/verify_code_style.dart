@@ -24,7 +24,7 @@ class VerifyCodeStyle {
   static const TextStyle resendCode = TextStyle(
     color: GeneralColors.primaryColor,
     fontFamily: 'Avenir_Regular',
-    fontSize: 15,
+    fontSize: 13,
     fontWeight: FontWeight.w700,
   );
 }

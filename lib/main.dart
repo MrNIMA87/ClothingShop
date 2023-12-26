@@ -1,6 +1,3 @@
-
-import 'package:clothing_shop/view/screens/mainScreens/main_screen.dart';
-import 'package:clothing_shop/view/screens/mainScreens/on_boarding.dart';
 import 'package:clothing_shop/view/screens/mainScreens/welcome_screen.dart';
 
 
@@ -34,7 +31,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: AppThemes.themeData,
-      home: MainScreen(),
+      home: const WelcomeScreen(),
     );
   }
 }

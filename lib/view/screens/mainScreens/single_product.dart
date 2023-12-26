@@ -1,13 +1,11 @@
 import 'package:clothing_shop/constant/dimens.dart';
 import 'package:clothing_shop/constant/extension.dart';
-import 'package:clothing_shop/gen/assets.gen.dart';
 import 'package:clothing_shop/methods/home_screen.dart';
 import 'package:clothing_shop/model/products_model.dart';
 import 'package:clothing_shop/theme/colors/general_colors.dart';
 import 'package:clothing_shop/theme/textStyle/general_style.dart';
 import 'package:clothing_shop/theme/textStyle/home_style.dart';
 import 'package:clothing_shop/theme/textStyle/single_product_style.dart';
-import 'package:clothing_shop/view/screens/mainScreens/home_screen.dart';
 import 'package:clothing_shop/view/widgets/notifications/successful_notification.dart';
 
 import 'package:clothing_shop/view/widgets/single_product_category.dart';
@@ -15,7 +13,6 @@ import 'package:expandable_text/expandable_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/utils.dart';
 
 import '../../../constant/lists.dart';
 import '../../../model/my_cart_model.dart';
@@ -261,7 +258,7 @@ class appBar extends StatelessWidget {
       children: [
         //TODO: hatman aks haro avaz kon
         //Button for back page
-        BackPage(width: 50.0.obs),
+        BackPage(width: 40.0.obs),
         //TODO: Fek konam niaz be edit style bashe
         const Text(
           'Product Details',
@@ -326,6 +323,7 @@ class buyButton extends StatelessWidget {
             price: productList[selectIndex.value].price,
             image: productList[selectIndex.value].image,
             size: 'XLL',
+            numberProduct: 1.obs,
           ));
           sendSuccessfulNotification(context, 'Add Product',
               'The product has been successfully added to the cart');
@@ -337,8 +335,8 @@ class buyButton extends StatelessWidget {
         label: Text(
           'Add to cart',
           style: GeneralTextStyle.textButton.copyWith(
-            fontSize: 17,
-            fontWeight: FontWeight.w700,
+            fontSize: 15,
+            fontWeight: FontWeight.w600,
           ),
         ),
       ),

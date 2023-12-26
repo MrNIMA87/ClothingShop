@@ -7,7 +7,6 @@ import 'package:clothing_shop/view/widgets/notifications/successful_notification
 import 'package:clothing_shop/view/widgets/sgin/flash_sale_category.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:toastification/toastification.dart';
 
 import '../../../theme/textStyle/general_style.dart';
 

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:clothing_shop/constant/extension.dart';
 import 'package:clothing_shop/theme/colors/general_colors.dart';

@@ -107,6 +107,10 @@ class $AssetsImagesGen {
   AssetGenImage get explore5 =>
       const AssetGenImage('assets/images/explore_5.jpg');
 
+  /// File path: assets/images/explore_6.jpg
+  AssetGenImage get explore6 =>
+      const AssetGenImage('assets/images/explore_6.jpg');
+
   /// File path: assets/images/onboarding_1.png
   AssetGenImage get onboarding1 =>
       const AssetGenImage('assets/images/onboarding_1.png');
@@ -148,6 +152,7 @@ class $AssetsImagesGen {
         explore41,
         explore42,
         explore5,
+        explore6,
         onboarding1,
         onboarding2,
         onboarding3,

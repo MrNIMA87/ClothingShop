@@ -27,7 +27,6 @@ class SingleProductCategory extends StatelessWidget {
           return InkWell(
             onTap: () {
               selectedIndex.value = index;
-              print(selectedIndex);
             },
             child: Obx(
               () => Container(

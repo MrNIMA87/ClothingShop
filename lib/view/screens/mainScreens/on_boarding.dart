@@ -1,10 +1,9 @@
 import 'package:clothing_shop/constant/extension.dart';
 import 'package:clothing_shop/gen/assets.gen.dart';
 import 'package:clothing_shop/theme/colors/general_colors.dart';
-import 'package:clothing_shop/view/screens/sign/sign_in.dart';
+import 'package:clothing_shop/view/screens/sign/sign_up.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../constant/Strings/welcome_strings.dart';
 import '../../../constant/dimens.dart';
 import '../../../theme/textStyle/welcome_style.dart';
 
@@ -81,7 +80,6 @@ class OnboardingPage extends StatelessWidget {
   String info = 'Lorem';
   RxInt selectIndexPage = 0.obs;
   PageController pageController = PageController();
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -94,7 +92,7 @@ class OnboardingPage extends StatelessWidget {
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage(image),
-              fit: BoxFit.cover,
+              fit: BoxFit.fill,
             ),
           ),
         ),
@@ -143,16 +141,17 @@ class OnboardingPage extends StatelessWidget {
               child: IconButton(
                 onPressed: () {
                   pageController.previousPage(
-                      duration: const Duration(milliseconds: 200),
+                      duration: const Duration(milliseconds: 150),
                       curve: Curves.ease);
                 },
                 icon: const Icon(
-                  Icons.arrow_back,
+                  Icons.arrow_back_ios,
                   color: GeneralColors.primaryColor,
-                  size: 25,
+                  size: 20,
                 ),
               ),
             ),
+
             //
             SizedBox(
               width: Get.width / 5,
@@ -186,18 +185,23 @@ class OnboardingPage extends StatelessWidget {
               ),
               child: IconButton(
                 onPressed: () {
-                  if (selectIndexPage.value == 2) {
-                    Get.toEnd(() => SignIn());
+                  if (selectIndexPage == 2) {
+                    Get.to(() => const SignUp(),);
                   } else {
                     pageController.nextPage(
-                        duration: const Duration(milliseconds: 200),
+                        duration: const Duration(milliseconds: 150),
                         curve: Curves.ease);
+                    print(selectIndexPage);
                   }
                 },
-                icon: const Icon(
-                  Icons.arrow_forward_rounded,
-                  color: Colors.white,
-                  size: 25,
+                icon: Obx(
+                  () => Icon(
+                    selectIndexPage == 2
+                        ? Icons.check
+                        : Icons.arrow_forward_ios_sharp,
+                    color: Colors.white,
+                    size: 20,
+                  ),
                 ),
               ),
             ),

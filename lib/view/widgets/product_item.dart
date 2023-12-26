@@ -37,7 +37,6 @@ class Items extends StatelessWidget {
             onTap: () {
               selectProduct.value = index;
 
-              print(selectProduct);
               Get.to(
                 () => SingleProduct(
                   selectedProductIndex: selectProduct,
@@ -60,7 +59,7 @@ class Items extends StatelessWidget {
                         //image
                         Container(
                           width: double.maxFinite,
-                          height: Get.height / 4,
+                          height: Get.height / 4.1,
                           decoration: BoxDecoration(
                             image: DecorationImage(
                               image: AssetImage(
@@ -80,8 +79,8 @@ class Items extends StatelessWidget {
                               },
                               child: Container(
                                 margin: const EdgeInsets.all(10),
-                                width: 30,
-                                height: 30,
+                                width: Get.width / 10,
+                                height: Get.height / 22,
                                 decoration: BoxDecoration(
                                   color: Colors.white.withOpacity(0.7),
                                   shape: BoxShape.circle,

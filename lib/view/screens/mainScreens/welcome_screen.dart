@@ -4,6 +4,7 @@ import 'package:clothing_shop/constant/extension.dart';
 import 'package:clothing_shop/gen/assets.gen.dart';
 import 'package:clothing_shop/theme/colors/general_colors.dart';
 import 'package:clothing_shop/theme/textStyle/welcome_style.dart';
+import 'package:clothing_shop/view/screens/mainScreens/on_boarding.dart';
 import 'package:clothing_shop/view/screens/sign/sign_in.dart';
 import 'package:clothing_shop/view/widgets/notifications/eror_notification.dart';
 import 'package:flutter/material.dart';
@@ -121,19 +122,22 @@ class WelcomeScreen extends StatelessWidget {
                   sendErrorNotification(context, 'Not Registered',
                       'You have an active account and you need to register');
                 },
-                child: Container(
-                  width: double.maxFinite,
-                  height: Get.height / 14,
-                  decoration: const BoxDecoration(
-                    color: GeneralColors.primaryColor,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(100),
+                child: GestureDetector(
+                  onTap: () => Get.to(() => OnboardingScreen()),
+                  child: Container(
+                    width: double.maxFinite,
+                    height: Get.height / 14,
+                    decoration: const BoxDecoration(
+                      color: GeneralColors.primaryColor,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(100),
+                      ),
                     ),
-                  ),
-                  child: const Center(
-                    child: Text(
-                      'Let\'s Get Started',
-                      style: WelcomeStyle.button,
+                    child: const Center(
+                      child: Text(
+                        'Let\'s Get Started',
+                        style: WelcomeStyle.button,
+                      ),
                     ),
                   ),
                 ),
@@ -147,16 +151,16 @@ class WelcomeScreen extends StatelessWidget {
                     style: WelcomeStyle.infoSignIn,
                     textAlign: TextAlign.center,
                   ),
-                  Container(
-                    decoration: const BoxDecoration(
-                        border: Border(
-                            bottom: BorderSide(
-                      color: GeneralColors.primaryColor,
-                    ))),
-                    child: TextButton(
-                      onPressed: () => Get.to(() => SignIn()),
+                  GestureDetector(
+                    onTap: () => Get.to(() => SignIn()),
+                    child: Container(
+                      decoration: const BoxDecoration(
+                          border: Border(
+                              bottom: BorderSide(
+                        color: GeneralColors.primaryColor,
+                      ))),
                       child: const Text(
-                        'Sign in',
+                        ' Sign in ',
                         style: WelcomeStyle.signIn,
                         textAlign: TextAlign.center,
                       ),

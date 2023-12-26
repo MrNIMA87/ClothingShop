@@ -153,7 +153,8 @@ class HomeScreen extends StatelessWidget {
           //Filter
           InkWell(
             onTap: () {
-              Get.to(FilterScreen());
+              Get.to(() => const FilterScreen(),
+                  transition: Transition.upToDown, curve: Curves.easeIn,duration: const Duration(milliseconds: 900));
             },
             child: Container(
               width: Get.width / 7,

@@ -13,18 +13,18 @@ class GeneralTextStyle {
   );
   static const TextStyle title = TextStyle(
     fontFamily: 'Avenir_Regular',
-    fontSize: 35,
+    fontSize: 32,
     fontWeight: FontWeight.w600,
     color: Colors.black,
   );
   static const TextStyle textButton = TextStyle(
     fontFamily: 'Avenir_Regular',
     color: Colors.white,
-    fontSize: 22,
+    fontSize: 17,
   );
   static const TextStyle hint = TextStyle(
     fontFamily: 'Avenir_Regular',
-    fontSize: 15,
+    fontSize: 12,
     fontWeight: FontWeight.w600,
     color: GeneralColors.hint,
   );

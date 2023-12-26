@@ -5,7 +5,6 @@ import 'package:clothing_shop/theme/textStyle/profile_style.dart';
 import 'package:clothing_shop/view/widgets/app_bar_single_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:flutter_contacts/flutter_contacts.dart';
 
 class InviteFriendScreen extends StatelessWidget {
   const InviteFriendScreen({super.key});

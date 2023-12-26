@@ -1,7 +1,8 @@
+import 'dart:math';
+
 import 'package:clothing_shop/constant/Strings/sign_up_strings.dart';
 import 'package:clothing_shop/constant/data_base/user_info.dart';
 import 'package:clothing_shop/constant/extension.dart';
-import 'package:clothing_shop/methods/checker_inputs.dart';
 import 'package:clothing_shop/theme/colors/general_colors.dart';
 import 'package:clothing_shop/theme/textStyle/sign_up.dart';
 import 'package:clothing_shop/view/screens/sign/verify_screen.dart';
@@ -12,7 +13,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import '../../../constant/Strings/sign_in_strings.dart';
+import 'package:toastification/toastification.dart';
 import '../../../constant/dimens.dart';
 import '../../../theme/textStyle/general_style.dart';
 import '../../../theme/textStyle/sgin_in_style.dart';
@@ -41,7 +42,10 @@ class _SignUpState extends State<SignUp> {
           body: SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
             child: Padding(
-              padding: const EdgeInsets.all(Dimens.paddingBody),
+              padding: EdgeInsets.only(
+                  left: Dimens.paddingBody,
+                  right: Dimens.paddingBody,
+                  top: Get.height / 7),
               child: Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -90,7 +94,6 @@ class _SignUpState extends State<SignUp> {
                             Icon: IconButton(
                               onPressed: () {
                                 visiblePassword.value = !visiblePassword.value;
-                                print(visiblePassword.value);
                               },
                               icon: Icon(visiblePassword.value == true
                                   ? CupertinoIcons.eye_slash
@@ -110,7 +113,6 @@ class _SignUpState extends State<SignUp> {
                             value: acceptRules.value,
                             onChanged: (value) {
                               acceptRules.value = value!;
-                              print(acceptRules);
                             },
                           ),
                         ),
@@ -138,11 +140,20 @@ class _SignUpState extends State<SignUp> {
                         await GetStorage().remove(UserInfo.email);
                         await GetStorage().write(
                             UserInfo.email, emailTextEditingController.text);
-                        Get.snackbar(
-                          'Successful registration',
-                          'You have successfully registered. Thank you.',
+                        // ignore: use_build_context_synchronously
+                        toastification.show(
+                          context: context,
+                          type: ToastificationType.info,
+                          style: ToastificationStyle.fillColored,
+                          title: Random().nextInt(9999).toString(),
+                          alignment: Alignment.topCenter,
+                          autoCloseDuration: const Duration(seconds: 10),
+                          borderRadius: BorderRadius.circular(12.0),
+                          backgroundColor: GeneralColors.primaryColor,
+                          closeOnClick: false,
+                          dragToClose: true,
                         );
-                        Get.to(() => VerifyCodeScreen());
+                        Get.to(() => const VerifyCodeScreen());
                         //  await checkerEmailInput(emailInput.emailController.text);
                         //   checkerInput(
                         //     inputs.valueInput.toString(),

@@ -1,8 +1,6 @@
 import 'package:clothing_shop/view/widgets/messenger/icon_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../../../gen/assets.gen.dart';
 import '../../../model/chat_model.dart';
 import '../../../theme/colors/general_colors.dart';
 import '../../../theme/textStyle/general_style.dart';

@@ -19,7 +19,7 @@ RxList<ChatModel> messages = [
     oppositeUser: true,
   ),
   ChatModel(
-    textMessage: '''hi i\'m opposite User. im from Iran!
+    textMessage: '''hi i'm opposite User. im from Iran!
 how are you?''',
     time: '08:04',
     oppositeUser: false,

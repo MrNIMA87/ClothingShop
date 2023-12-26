@@ -1,11 +1,9 @@
-import 'package:clothing_shop/constant/dimens.dart';
 import 'package:clothing_shop/theme/colors/general_colors.dart';
 import 'package:clothing_shop/view/screens/mainScreens/favorite_screen.dart';
 import 'package:clothing_shop/view/screens/mainScreens/home_screen.dart';
 import 'package:clothing_shop/view/screens/others/messenger.dart';
 import 'package:clothing_shop/view/screens/others/my_cart.dart';
 import 'package:clothing_shop/view/screens/mainScreens/profile_screen.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -35,29 +33,34 @@ class MainScreen extends StatelessWidget {
       const Messenger(),
       ProfileScreen(),
     ].obs;
-    return WillPopScope(
-      onWillPop: () {
-        routeHistory.removeLast();
-        return selectedBtmNavBarIndex.value = routeHistory.last;
-      },
-      child: Scaffold(
-        backgroundColor: GeneralColors.bgColor,
-        //for show pages
-        body: Obx(
-          () => IndexedStack(
-            index: selectedBtmNavBarIndex.value,
-            children: [
-              HomeScreen(),
-              const MyCart(),
-              FavoriteScreen(),
-              const Messenger(),
-              ProfileScreen(),
-            ],
+    return SafeArea(
+      child: WillPopScope(
+        onWillPop: () {
+          routeHistory.removeLast();
+          return selectedBtmNavBarIndex.value = routeHistory.last;
+        },
+        child: Scaffold(
+          backgroundColor: GeneralColors.bgColor,
+          //for show pages
+          body: Padding(
+            padding:const EdgeInsets.only(top: 20),
+            child: Obx(
+              () => IndexedStack(
+                index: selectedBtmNavBarIndex.value,
+                children: [
+                  HomeScreen(),
+                  const MyCart(),
+                  FavoriteScreen(),
+                  const Messenger(),
+                  ProfileScreen(),
+                ],
+              ),
+            ),
           ),
+          bottomNavigationBar: MyBottomNavigationBar(
+              selectedBtmNavBarIndex: selectedBtmNavBarIndex,
+              routeHistory: routeHistory),
         ),
-        bottomNavigationBar: MyBottomNavigationBar(
-            selectedBtmNavBarIndex: selectedBtmNavBarIndex,
-            routeHistory: routeHistory),
       ),
     );
   }

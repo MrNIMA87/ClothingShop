@@ -4,9 +4,7 @@ import 'package:clothing_shop/view/screens/others/profile_setting/help_center.da
 import 'package:clothing_shop/view/screens/others/profile_setting/invite_friend.dart';
 import 'package:clothing_shop/view/screens/others/profile_setting/privacy_policy.dart';
 import 'package:clothing_shop/view/screens/others/profile_setting/stteings.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import '../../../theme/colors/general_colors.dart';
 import '../../../theme/textStyle/profile_style.dart';
@@ -40,7 +38,7 @@ class ChoiceProfileScreen extends StatelessWidget {
               Icon(
                 icon,
                 color: GeneralColors.primaryColor,
-                size: 30,
+                size: 27,
               ),
               5.0.width,
               Text(

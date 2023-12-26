@@ -1,3 +1,4 @@
+import 'package:clothing_shop/view/screens/sign/sign_up.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -13,7 +14,7 @@ class ForgetPassword extends StatelessWidget {
     return Align(
       alignment: Alignment.bottomRight,
       child: Container(
-        margin: const EdgeInsets.only(top: 8, bottom: Dimens.bodyMargin /2),
+        margin: EdgeInsets.only(top: Get.height / 80, bottom: Dimens.bodyMargin /2),
         height: Get.height / 25,
         width: Get.width / 2.6,
         decoration: const BoxDecoration(
@@ -22,7 +23,7 @@ class ForgetPassword extends StatelessWidget {
           color: GeneralColors.primaryColor,
         ))),
         child: TextButton(
-          onPressed: () {},
+          onPressed: () => Get.to(()=> const SignUp()),
           child: const Text(
             'Forget Password?',
             style: SignInStyle.forgetPassword,

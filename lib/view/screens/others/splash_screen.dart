@@ -18,7 +18,7 @@ class SplashScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: GeneralColors.bgColor,
       body: Padding(
-        padding:  EdgeInsets.only(top:Get.height / 2.4),
+        padding: EdgeInsets.only(top: Get.height / 2.4),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -30,9 +30,12 @@ class SplashScreen extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            const Text(
-              'NimaShasmi',
-              style: SplashStyle.nameDeveloper,
+            Padding(
+              padding: EdgeInsets.only(top: Get.height / 2.2),
+              child: const Text(
+                'NimaShasmi',
+                style: SplashStyle.nameDeveloper,
+              ),
             ),
           ],
         ),

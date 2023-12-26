@@ -1,6 +1,5 @@
 import 'package:clothing_shop/constant/dimens.dart';
 import 'package:clothing_shop/constant/extension.dart';
-import 'package:clothing_shop/methods/home_screen.dart';
 import 'package:clothing_shop/view/screens/mainScreens/single_product.dart';
 import 'package:clothing_shop/view/widgets/sgin/flash_sale_category.dart';
 import 'package:flutter/cupertino.dart';
@@ -11,6 +10,7 @@ import '../../../model/products_model.dart';
 import '../../../theme/colors/general_colors.dart';
 import '../../../theme/textStyle/home_style.dart';
 import '../../widgets/app_bar_single_page.dart';
+import '../../widgets/notifications/eror_notification.dart';
 import '../../widgets/start_icon.dart';
 
 class FavoriteScreen extends StatelessWidget {
@@ -30,7 +30,7 @@ class FavoriteScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: PreferredSize(
-          preferredSize:const Size.fromHeight(40),
+          preferredSize: const Size.fromHeight(40),
           child: AppBarSinglePage(title: 'My Wishlist'),
         ),
         body: SingleChildScrollView(
@@ -97,7 +97,12 @@ class FavoriteScreen extends StatelessWidget {
                                             alignment: Alignment.topRight,
                                             child: InkWell(
                                               onTap: () {
-                                                HomeMethod().isFavorite(index, context);
+                                                ConstantLists.favoriteList
+                                                    .remove(index);
+                                                sendErrorNotification(
+                                                    context,
+                                                    'Favorite',
+                                                    'This Product Remove You\'re Favorite');
                                               },
                                               child: Container(
                                                 margin:
@@ -109,13 +114,9 @@ class FavoriteScreen extends StatelessWidget {
                                                       .withOpacity(0.7),
                                                   shape: BoxShape.circle,
                                                 ),
-                                                child: Center(
+                                                child: const Center(
                                                   child: Icon(
-                                                    ConstantLists.favoriteList
-                                                            .contains(index)
-                                                        ? CupertinoIcons
-                                                            .heart_fill
-                                                        : CupertinoIcons.heart,
+                                                    CupertinoIcons.heart_fill,
                                                     size: 20,
                                                     color: GeneralColors
                                                         .primaryColor,

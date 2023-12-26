@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../gen/assets.gen.dart';
-import '../../../model/chat_model.dart';
 import '../../../theme/textStyle/chat_style.dart';
 import '../icon_back_page.dart';
 
@@ -16,7 +15,7 @@ messengerAppBar() {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            BackPage(width: 40.0.obs),
+            BackPage(width: 30.0.obs),
             8.0.width,
             Container(
               margin: const EdgeInsets.all(5),

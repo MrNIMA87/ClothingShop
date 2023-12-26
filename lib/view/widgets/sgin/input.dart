@@ -1,12 +1,9 @@
 import 'dart:developer';
 
-import 'package:clothing_shop/constant/dimens.dart';
 import 'package:clothing_shop/constant/extension.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
 
-import '../../../constant/Strings/sign_in_strings.dart';
 import '../../../theme/colors/general_colors.dart';
 import '../../../theme/textStyle/general_style.dart';
 import '../../../theme/textStyle/sgin_in_style.dart';

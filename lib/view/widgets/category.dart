@@ -17,20 +17,20 @@ class Category extends StatelessWidget {
     return Column(
       children: [
         Container(
-          width: Get.width / 7,
-          height: Get.height / 14,
+          width: Get.width / 8,
+          height: Get.height / 15,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(1000),
-            color: Colors.grey[200],
+            color: const Color.fromARGB(255, 247, 242, 237),
           ),
           child: Center(
             child: ImageIcon(
               icon,
-              color: GeneralColors.primaryColor,
+              color: GeneralColors.primaryColor,size: Get.height / 25,
             ),
           ),
         ),
-        5.0.height,
+        7.0.height,
         Text(
           title,
           style: HomeStyle.categoryTitle,

@@ -8,7 +8,7 @@ class MyCartProductModel {
   String price;
   String size;
   String image;
-  RxInt? numberProduct;
+  RxInt numberProduct = 0.obs;
   // String category;
   MyCartProductModel({
     // required this.id,
@@ -16,7 +16,7 @@ class MyCartProductModel {
     this.price = '',
     //  this.category,
     this.size = '',
-    this.numberProduct,
+    required this.numberProduct,
     this.image = '',
   });
 

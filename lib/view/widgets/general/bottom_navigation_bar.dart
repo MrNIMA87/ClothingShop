@@ -52,7 +52,6 @@ class MyBottomNavigationBar extends StatelessWidget {
                 onTap: () {
                   selectedBtmNavBarIndex.value = index;
                   routeHistory.add(index);
-                  print(routeHistory);
                 },
                 //TODO: Inja bayad yek animation bezari ke vaghti box sefid taghir kard ba animation bere roye index badi
                 child: Obx(

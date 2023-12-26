@@ -1,5 +1,4 @@
 import 'package:clothing_shop/gen/assets.gen.dart';
-import 'package:get/get.dart';
 
 class ProductsModel {
   // String? id;
@@ -37,7 +36,7 @@ List<ProductsModel> productList = [
     price: '83.97',
     image: Assets.images.explore1.path,
     description:
-        '''Wearing a single coat makes you look neat and stylish. Simple jackets can make your everyday outfit look a little more formal and masculine. Simple designs and one color is one of the most common designs that men choose for their jackets. These jackets have their own fans and are available in different colors. Using a coat as a part of style can have a great impact on men\'s appearance. We have tried to provide all our products with high quality by using the best materials. The fabric of this coat is made of a combination of wool and polyester, which is very durable and resistant. This jacket closes with a button in the front''',
+        '''Wearing a single coat makes you look neat and stylish. Simple jackets can make your everyday outfit look a little more formal and masculine. Simple designs and one color is one of the most common designs that men choose for their jackets. These jackets have their own fans and are available in different colors. Using a coat as a part of style can have a great impact on men's appearance. We have tried to provide all our products with high quality by using the best materials. The fabric of this coat is made of a combination of wool and polyester, which is very durable and resistant. This jacket closes with a button in the front''',
     race: '4.8',
     category: 'All',
   ),
@@ -46,7 +45,7 @@ List<ProductsModel> productList = [
     price: '36.97',
     image: Assets.images.explore21.path,
     description:
-        '''Wearing a single coat makes you look neat and stylish. Simple jackets can make your everyday outfit look a little more formal and masculine. Simple designs and one color is one of the most common designs that men choose for their jackets. These jackets have their own fans and are available in different colors. Using a coat as a part of style can have a great impact on men\'s appearance. We have tried to provide all our products with high quality by using the best materials. The fabric of this coat is made of a combination of wool and polyester, which is very durable and resistant. This jacket closes with a button in the front''',
+        '''Wearing a single coat makes you look neat and stylish. Simple jackets can make your everyday outfit look a little more formal and masculine. Simple designs and one color is one of the most common designs that men choose for their jackets. These jackets have their own fans and are available in different colors. Using a coat as a part of style can have a great impact on men's appearance. We have tried to provide all our products with high quality by using the best materials. The fabric of this coat is made of a combination of wool and polyester, which is very durable and resistant. This jacket closes with a button in the front''',
     race: '4.8',
     category: '',
   ),
@@ -55,7 +54,7 @@ List<ProductsModel> productList = [
     price: '64.97',
     image: Assets.images.explore22.path,
     description:
-        '''Wearing a single coat makes you look neat and stylish. Simple jackets can make your everyday outfit look a little more formal and masculine. Simple designs and one color is one of the most common designs that men choose for their jackets. These jackets have their own fans and are available in different colors. Using a coat as a part of style can have a great impact on men\'s appearance. We have tried to provide all our products with high quality by using the best materials. The fabric of this coat is made of a combination of wool and polyester, which is very durable and resistant. This jacket closes with a button in the front''',
+        '''Wearing a single coat makes you look neat and stylish. Simple jackets can make your everyday outfit look a little more formal and masculine. Simple designs and one color is one of the most common designs that men choose for their jackets. These jackets have their own fans and are available in different colors. Using a coat as a part of style can have a great impact on men's appearance. We have tried to provide all our products with high quality by using the best materials. The fabric of this coat is made of a combination of wool and polyester, which is very durable and resistant. This jacket closes with a button in the front''',
     race: '4.8',
     category: '',
   ),

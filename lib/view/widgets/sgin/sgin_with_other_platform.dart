@@ -1,7 +1,6 @@
 import 'package:clothing_shop/constant/dimens.dart';
 import 'package:clothing_shop/constant/extension.dart';
 import 'package:clothing_shop/theme/textStyle/sgin_in_style.dart';
-import 'package:clothing_shop/view/widgets/divider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

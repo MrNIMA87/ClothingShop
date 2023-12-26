@@ -53,7 +53,7 @@ class FAQList extends StatelessWidget {
                       collapsed: const Text(
                         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                         softWrap: true,
-                        maxLines: 3,
+                        maxLines: 5,
                         overflow: TextOverflow.ellipsis,
                         style: ProfileStyle.bodyFAQ,
                       ),

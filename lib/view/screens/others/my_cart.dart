@@ -1,12 +1,10 @@
 import 'package:clothing_shop/constant/dimens.dart';
 import 'package:clothing_shop/constant/extension.dart';
-import 'package:clothing_shop/constant/lists.dart';
 import 'package:clothing_shop/gen/assets.gen.dart';
 import 'package:clothing_shop/model/my_cart_model.dart';
 import 'package:clothing_shop/theme/colors/general_colors.dart';
 import 'package:clothing_shop/theme/textStyle/home_style.dart';
 import 'package:clothing_shop/theme/textStyle/single_product_style.dart';
-import 'package:clothing_shop/view/screens/mainScreens/home_screen.dart';
 import 'package:clothing_shop/view/screens/mainScreens/main_screen.dart';
 import 'package:clothing_shop/view/widgets/app_bar_single_page.dart';
 import 'package:clothing_shop/view/widgets/general/button_sign.dart';
@@ -388,12 +386,12 @@ class ListItems extends StatelessWidget {
                             ),
                             child: ElevatedButton(
                               onPressed: () {
-                                myCartProducts[index].numberProduct!.value -= 1;
+                                myCartProducts[index].numberProduct.value -= 1;
                                 if (myCartProducts[index]
-                                        .numberProduct!
+                                        .numberProduct
                                         .value <=
                                     1) {
-                                  myCartProducts[index].numberProduct!.value =
+                                  myCartProducts[index].numberProduct.value =
                                       1;
                                 }
                                 print(numberProduct);
@@ -436,7 +434,7 @@ class ListItems extends StatelessWidget {
                             ),
                             child: ElevatedButton(
                               onPressed: () {
-                                myCartProducts[index].numberProduct!.value += 1;
+                                myCartProducts[index].numberProduct.value += 1;
 
                                 print(myCartProducts[index].numberProduct);
                               },

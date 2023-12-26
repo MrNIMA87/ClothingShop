@@ -5,38 +5,38 @@ import '../colors/general_colors.dart';
 class ProfileStyle {
   static const TextStyle name = TextStyle(
     fontFamily: 'Avenir_Regular',
-    fontSize: 18,
+    fontSize: 15,
     fontWeight: FontWeight.w600,
     color: Colors.black87,
   );
   static const TextStyle titleList = TextStyle(
     fontFamily: 'Avenir_Regular',
-    fontSize: 16,
+    fontSize: 13,
     fontWeight: FontWeight.w500,
     color: Colors.black87,
   );
   static const TextStyle selectedTopCategory = TextStyle(
     fontFamily: 'Avenir_Regular',
     color: GeneralColors.primaryColor,
-    fontSize: 18,
+    fontSize: 15,
     fontWeight: FontWeight.w600,
   );
   static const TextStyle notSelectedTopCategory = TextStyle(
     fontFamily: 'Avenir_Regular',
     color: Colors.black38,
-    fontSize: 18,
+    fontSize: 15,
     fontWeight: FontWeight.w600,
   );
   static const TextStyle titleFAQ = TextStyle(
     fontFamily: 'Avenir_Regular',
     color: Colors.black,
-    fontSize: 15,
+    fontSize: 13,
     fontWeight: FontWeight.w600,
   );
   static const TextStyle bodyFAQ = TextStyle(
     fontFamily: 'Avenir_Regular',
     color: Colors.black45,
-    fontSize: 14,
+    fontSize: 12,
     fontWeight: FontWeight.w500,
   );
   //Privacy Policy Styles

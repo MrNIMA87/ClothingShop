@@ -46,6 +46,7 @@ class SignIn extends StatelessWidget {
                   const Text(
                     SignInStrings.welcome,
                     style: SignInStyle.welcome,
+                    textAlign: TextAlign.center,
                   ),
                   (Dimens.bodyMargin * 2).height,
                   //inputs
@@ -89,7 +90,7 @@ class SignIn extends StatelessWidget {
                   ButtonSign(
                     title: 'Sign In',
                     onPressed: () {
-                      Get.to(()=> VerifyCodeScreen());
+                      Get.to(()=> const VerifyCodeScreen());
                       toastification.show(
                         context: context,
                         type: ToastificationType.info,

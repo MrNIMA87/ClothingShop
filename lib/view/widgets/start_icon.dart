@@ -16,8 +16,9 @@ class MyStarIcon extends StatelessWidget {
     return Row(
       children: [
         Container(
-          width: 15,
-          height: 15,
+          margin: const EdgeInsets.only(left: 5.0),
+          width: 10,
+          height: 10,
           decoration: const ShapeDecoration(
             shape: StarBorder(
               side: BorderSide(
@@ -30,7 +31,7 @@ class MyStarIcon extends StatelessWidget {
         8.0.width,
         Text(
           productList[selectedIndex.value].race,
-          style: GeneralTextStyle.hint.copyWith(fontSize: 16),
+          style: GeneralTextStyle.hint.copyWith(fontSize: 10),
         ),
       ],
     );

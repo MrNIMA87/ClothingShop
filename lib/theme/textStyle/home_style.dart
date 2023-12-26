@@ -5,19 +5,19 @@ import '../colors/general_colors.dart';
 class HomeStyle {
   static const TextStyle title = TextStyle(
     fontFamily: 'Avenir_Regular',
-    fontSize: 22,
+    fontSize: 17,
     fontWeight: FontWeight.w600,
     color: Colors.black87,
   );
   static const TextStyle categoryTitle = TextStyle(
     fontFamily: 'Avenir_Regular',
-    fontSize: 15,
+    fontSize: 11,
     fontWeight: FontWeight.w700,
     color: Colors.black87,
   );
   static const TextStyle titleProduct = TextStyle(
     fontFamily: 'Avenir_Regular',
-    fontSize: 15,
+    fontSize: 11,
     fontWeight: FontWeight.w600,
     color: Colors.black87,
   );
@@ -29,20 +29,20 @@ class HomeStyle {
   );
   static const TextStyle flashSaleCategoryTitleNotSelected = TextStyle(
     fontFamily: 'Avenir_Regular',
-    fontSize: 14,
+    fontSize: 11,
     fontWeight: FontWeight.w600,
     color: Colors.black87,
   );
   static const TextStyle flashSaleCategoryTitleOntSelected = TextStyle(
     fontFamily: 'Avenir_Regular',
-    fontSize: 14,
+    fontSize: 11,
     fontWeight: FontWeight.w600,
     color: Colors.white,
   );
   static const TextStyle seeAll = TextStyle(
     color: GeneralColors.primaryColor,
     fontFamily: 'Avenir_Regular',
-    fontSize: 15,
+    fontSize: 13,
     fontWeight: FontWeight.w700,
   );
   static const TextStyle timerTitle = TextStyle(

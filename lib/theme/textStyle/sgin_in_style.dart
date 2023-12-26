@@ -11,14 +11,14 @@ class SignInStyle {
 
   static const TextStyle titleTextField = TextStyle(
     fontFamily: 'Avenir_Regular',
-    fontSize: 16,
+    fontSize: 15,
     fontWeight: FontWeight.w500,
     color: Colors.black,
   );
   static const TextStyle forgetPassword = TextStyle(
     fontFamily: 'Avenir_Regular',
     color: GeneralColors.primaryColor,
-    fontSize: 15,
+    fontSize: 10.5,
     fontWeight: FontWeight.w600,
   );
   static const TextStyle titleSignOtherPlatform = TextStyle(

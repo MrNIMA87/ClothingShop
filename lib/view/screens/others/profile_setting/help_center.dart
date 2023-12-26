@@ -18,7 +18,7 @@ class HelpCenterScreen extends StatelessWidget {
     'Contact Us',
   ];
   //TODO: Icon haye inaro avaz kon va bejash image bezar (:
-  List<IconData> IconFaqList = [
+  List<IconData> iconFaqList = [
     Icons.headset_mic,
     Icons.telegram,
     Icons.facebook,
@@ -100,7 +100,7 @@ class HelpCenterScreen extends StatelessWidget {
                   ? FAQList()
                   : Expanded(
                       child: ListView.builder(
-                        itemCount: IconFaqList.length,
+                        itemCount: iconFaqList.length,
                         itemBuilder: (context, index) {
                           return Column(
                             children: [
@@ -120,7 +120,7 @@ class HelpCenterScreen extends StatelessWidget {
                                   children: [
                                     //Icon
                                     Icon(
-                                      IconFaqList[index],
+                                      iconFaqList[index],
                                       color: GeneralColors.primaryColor,
                                       size: 35,
                                     ),
