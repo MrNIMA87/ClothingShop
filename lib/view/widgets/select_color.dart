@@ -27,7 +27,7 @@ class SelectedColorCategory extends StatelessWidget {
               onTap: () => selectedIndexColor.value = index,
               child: Obx(
                 () => Container(
-                  width: 32,
+                  width: 28,
                   decoration: BoxDecoration(
                     color: selectColor[index],
                     shape: BoxShape.circle,

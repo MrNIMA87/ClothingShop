@@ -67,7 +67,7 @@ class _FilterScreenState extends State<FilterScreen> {
                   alignment: Alignment.centerLeft,
                   child: Text(
                     'Brands',
-                    style: HomeStyle.categoryTitle.copyWith(fontSize: 17),
+                    style: HomeStyle.categoryTitle.copyWith(fontSize: 15),
                   )),
               FlashSaleCategory(titleCategory: category.obs),
               15.0.height,
@@ -75,7 +75,7 @@ class _FilterScreenState extends State<FilterScreen> {
                   alignment: Alignment.centerLeft,
                   child: Text(
                     'Gender',
-                    style: HomeStyle.categoryTitle.copyWith(fontSize: 17),
+                    style: HomeStyle.categoryTitle.copyWith(fontSize: 15),
                   )),
               FlashSaleCategory(titleCategory: genderCategory.obs),
               15.0.height,
@@ -83,7 +83,7 @@ class _FilterScreenState extends State<FilterScreen> {
                   alignment: Alignment.centerLeft,
                   child: Text(
                     'Sort By',
-                    style: HomeStyle.categoryTitle.copyWith(fontSize: 17),
+                    style: HomeStyle.categoryTitle.copyWith(fontSize: 15),
                   )),
               FlashSaleCategory(titleCategory: sortBy.obs),
               15.0.height,
@@ -92,7 +92,7 @@ class _FilterScreenState extends State<FilterScreen> {
                   alignment: Alignment.centerLeft,
                   child: Text(
                     'Pricing Range',
-                    style: HomeStyle.categoryTitle.copyWith(fontSize: 17),
+                    style: HomeStyle.categoryTitle.copyWith(fontSize: 15),
                   )),
               Obx(
                 () => RangeSlider(
@@ -146,7 +146,7 @@ class _FilterScreenState extends State<FilterScreen> {
                         Text(
                           titleRace[index],
                           style: HomeStyle.titleProduct.copyWith(
-                            fontSize: 16,
+                            fontSize: 13,
                           ),
                         ),
                         20.0.width,
@@ -154,8 +154,8 @@ class _FilterScreenState extends State<FilterScreen> {
                           onTap: () => selectedIndexReview.value = index,
                           child: Obx(
                             () => Container(
-                              width: 21,
-                              height: 21,
+                              width: 19,
+                              height: 19,
                               decoration: BoxDecoration(
                                 border: Border.all(
                                   color: GeneralColors.primaryColor,
@@ -220,7 +220,7 @@ class _FilterScreenState extends State<FilterScreen> {
                     style: GeneralTextStyle.textButton.copyWith(
                         color: GeneralColors.primaryColor,
                         fontWeight: FontWeight.w600,
-                        fontSize: 19),
+                        fontSize: 16),
                   ),
                 ),
               ),
@@ -248,7 +248,7 @@ class _FilterScreenState extends State<FilterScreen> {
                   child: Text(
                     'Apply',
                     style: GeneralTextStyle.textButton
-                        .copyWith(fontWeight: FontWeight.w500, fontSize: 20),
+                        .copyWith(fontWeight: FontWeight.w500, fontSize: 16),
                   ),
                 ),
               ),

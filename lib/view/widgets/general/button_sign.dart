@@ -14,7 +14,7 @@ class ButtonSign extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: Get.width,
+      width: Get.width / 1.1,
       height: Get.height / 16,
       decoration: const BoxDecoration(
         color: GeneralColors.primaryColor,

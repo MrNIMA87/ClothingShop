@@ -417,7 +417,7 @@ class ListItems extends StatelessWidget {
                           ),
                           Obx(
                             () => Text(
-                              '${myCartProducts[index].numberProduct ?? 1}',
+                              '${myCartProducts[index].numberProduct}',
                             ),
                           ),
 

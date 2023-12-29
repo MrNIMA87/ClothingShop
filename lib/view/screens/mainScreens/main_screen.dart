@@ -9,8 +9,14 @@ import 'package:get/get.dart';
 
 import '../../widgets/general/bottom_navigation_bar.dart';
 
-class MainScreen extends StatelessWidget {
-  MainScreen({super.key});
+class MainScreen extends StatefulWidget {
+  const MainScreen({super.key});
+
+  @override
+  State<MainScreen> createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
   //
   List<Widget> screens = [
     HomeScreen(),
@@ -22,7 +28,9 @@ class MainScreen extends StatelessWidget {
 
   //
   RxList routeHistory = [].obs;
+
   RxInt selectedBtmNavBarIndex = 0.obs;
+
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +51,7 @@ class MainScreen extends StatelessWidget {
           backgroundColor: GeneralColors.bgColor,
           //for show pages
           body: Padding(
-            padding:const EdgeInsets.only(top: 20),
+            padding: const EdgeInsets.only(top: 20),
             child: Obx(
               () => IndexedStack(
                 index: selectedBtmNavBarIndex.value,
