@@ -1,8 +1,4 @@
-import 'package:clothing_shop/view/screens/mainScreens/main_screen.dart';
-import 'package:clothing_shop/view/screens/mainScreens/welcome_screen.dart';
 import 'package:clothing_shop/view/screens/others/splash_screen.dart';
-
-
 
 import 'theme/colors/general_colors.dart';
 import "package:clothing_shop/theme/themes.dart";

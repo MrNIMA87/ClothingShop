@@ -6,7 +6,6 @@ import 'package:clothing_shop/theme/colors/general_colors.dart';
 import 'package:clothing_shop/theme/textStyle/welcome_style.dart';
 import 'package:clothing_shop/view/screens/mainScreens/on_boarding.dart';
 import 'package:clothing_shop/view/screens/sign/sign_in.dart';
-import 'package:clothing_shop/view/widgets/notifications/eror_notification.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -113,35 +112,26 @@ class WelcomeScreen extends StatelessWidget {
               ),
               Dimens.bodyMargin.height,
               //Button Next Page
-              ElevatedButton(
-                style: const ButtonStyle(
-                  backgroundColor: MaterialStatePropertyAll(Colors.transparent),
-                  elevation: MaterialStatePropertyAll(0),
-                ),
-                onPressed: () {
-                  sendErrorNotification(context, 'Not Registered',
-                      'You have an active account and you need to register');
-                },
-                child: GestureDetector(
-                  onTap: () => Get.to(() => OnboardingScreen()),
-                  child: Container(
-                    width: double.maxFinite,
-                    height: Get.height / 14,
-                    decoration: const BoxDecoration(
-                      color: GeneralColors.primaryColor,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(100),
-                      ),
+              GestureDetector(
+                onTap: () => Get.to(() => OnboardingScreen()),
+                child: Container(
+                  width: double.maxFinite,
+                  height: Get.height / 14,
+                  decoration: const BoxDecoration(
+                    color: GeneralColors.primaryColor,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(100),
                     ),
-                    child: const Center(
-                      child: Text(
-                        'Let\'s Get Started',
-                        style: WelcomeStyle.button,
-                      ),
+                  ),
+                  child: const Center(
+                    child: Text(
+                      'Let\'s Get Started',
+                      style: WelcomeStyle.button,
                     ),
                   ),
                 ),
               ),
+
               Dimens.bodyMargin.height,
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

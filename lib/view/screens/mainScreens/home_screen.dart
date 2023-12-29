@@ -14,14 +14,10 @@ import 'package:get/get.dart';
 
 import '../../widgets/product_item.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class HomeScreen extends StatelessWidget {
+   HomeScreen({super.key});
 
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
 
-class _HomeScreenState extends State<HomeScreen> {
   // ProductController productsController = Get.put(ProductController());
   List<String> flashSaleCategoryTitle = [
     'All',
@@ -41,95 +37,76 @@ class _HomeScreenState extends State<HomeScreen> {
   RxBool alignment = false.obs;
 
   @override
-  void initState() {
-    super.initState();
-    WidgetsBinding.instance.addPersistentFrameCallback((timeStamp) {
-      setState(() {
-        alignment.value = true;
-      });
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
-      child: AnimatedOpacity(
-        opacity: alignment.value ? 1 : 0.1,
-        duration: const Duration(seconds: 2),
-        child: Scaffold(
-          //appBar
-          appBar: appBar(),
-          backgroundColor: GeneralColors.bgColor,
-          body: AnimatedContainer(
-            width: alignment.value ? Get.width : 1,
-            height: alignment.value ? Get.height : 1,
-            duration: Duration(seconds: 2),
-            child: SafeArea(
-              child: SingleChildScrollView(
-                physics: const BouncingScrollPhysics(),
-                child: Padding(
-                  padding: const EdgeInsets.all(Dimens.bodyMargin),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
+      child: Scaffold(
+        //appBar
+        appBar: appBar(),
+        backgroundColor: GeneralColors.bgColor,
+        body: SafeArea(
+          child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Padding(
+              padding: const EdgeInsets.all(Dimens.bodyMargin),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  //slider
+                  const SliderWidget(),
+                  //
+                  Dimens.bodyMargin.height,
+                  //category:
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      //slider
-                      const SliderWidget(),
-                      //
-                      Dimens.bodyMargin.height,
-                      //category:
-                      const Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Category',
-                            style: HomeStyle.title,
-                          ),
-                          Text(
-                            'See All',
-                            style: HomeStyle.seeAll,
-                          ),
-                        ],
+                      Text(
+                        'Category',
+                        style: HomeStyle.title,
                       ),
-                      Dimens.bodyMargin.height,
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Category(
-                            icon: Assets.icons.tShirt.provider(),
-                            title: 'T-Shirt',
-                          ),
-                          Category(
-                            icon: Assets.icons.pant.provider(),
-                            title: 'Pant',
-                          ),
-                          Category(
-                            icon: Assets.icons.dress.provider(),
-                            title: 'Dress',
-                          ),
-                          Category(
-                            icon: Assets.icons.jacket.provider(),
-                            title: 'Jacket',
-                          ),
-                        ],
+                      Text(
+                        'See All',
+                        style: HomeStyle.seeAll,
                       ),
-                      Dimens.bodyMargin.height,
-                      //titleCategory flash sale
-                      const Align(
-                        alignment: Alignment.topLeft,
-                        child: Text(
-                          'Flash sale',
-                          style: HomeStyle.title,
-                        ),
-                      ),
-                      (Dimens.bodyMargin / 3).height,
-                      FlashSaleCategory(titleCategory: titleCategory),
-                      (Dimens.bodyMargin / 3).height,
-                      //Items Flash Sale
-                      Items(),
                     ],
                   ),
-                ),
+                  Dimens.bodyMargin.height,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Category(
+                        icon: Assets.icons.tShirt.provider(),
+                        title: 'T-Shirt',
+                      ),
+                      Category(
+                        icon: Assets.icons.pant.provider(),
+                        title: 'Pant',
+                      ),
+                      Category(
+                        icon: Assets.icons.dress.provider(),
+                        title: 'Dress',
+                      ),
+                      Category(
+                        icon: Assets.icons.jacket.provider(),
+                        title: 'Jacket',
+                      ),
+                    ],
+                  ),
+                  Dimens.bodyMargin.height,
+                  //titleCategory flash sale
+                  const Align(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      'Flash sale',
+                      style: HomeStyle.title,
+                    ),
+                  ),
+                  (Dimens.bodyMargin / 3).height,
+                  FlashSaleCategory(titleCategory: titleCategory),
+                  (Dimens.bodyMargin / 3).height,
+                  //Items Flash Sale
+                  Items(),
+                ],
               ),
             ),
           ),
