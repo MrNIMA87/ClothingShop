@@ -1,8 +1,8 @@
 import 'package:clothing_shop/theme/colors/general_colors.dart';
 import 'package:clothing_shop/view/screens/mainScreens/favorite_screen.dart';
 import 'package:clothing_shop/view/screens/mainScreens/home_screen.dart';
-import 'package:clothing_shop/view/screens/others/messenger.dart';
-import 'package:clothing_shop/view/screens/others/my_cart.dart';
+import 'package:clothing_shop/view/screens/mainScreens/messenger.dart';
+import 'package:clothing_shop/view/screens/mainScreens/my_cart.dart';
 import 'package:clothing_shop/view/screens/mainScreens/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -73,68 +73,3 @@ class _MainScreenState extends State<MainScreen> {
     );
   }
 }
-//  Row(
-//             mainAxisAlignment: MainAxisAlignment.spaceAround,
-//             children: [
-//               Container(
-//                 width: Get.width / 7.5,
-//                 height: Get.height / 5,
-//                 decoration: BoxDecoration(
-//                   color: Colors.white,
-//                   shape: BoxShape.circle,
-//                 ),
-//                 child: Icon(
-//                   Icons.home,
-//                   color: GeneralColors.primaryColor,
-//                   size: 25,
-//                 ),
-//               ),
-//               Container(
-//                 width: Get.width / 7.5,
-//                 height: Get.height / 5,
-//                 decoration: BoxDecoration(
-//                   color: Colors.white,
-//                   shape: BoxShape.circle,
-//                 ),
-//                 child: Icon(
-//                   Icons.home,
-//                   color: GeneralColors.primaryColor,
-//                   size: 25,
-//                 ),
-//               ),
-//               Container(
-//                 width: Get.width / 7.5,
-//                 height: Get.height / 5,
-//                 decoration: BoxDecoration(
-//                   color: Colors.white,
-//                   shape: BoxShape.circle,
-//                 ),
-//                 child: Icon(
-//                   Icons.home,
-//                   color: GeneralColors.primaryColor,
-//                   size: 25,
-//                 ),
-//               ),
-//               Container(
-//                 width: Get.width / 7.5,
-//                 height: Get.height / 5,
-//                 decoration: BoxDecoration(
-//                   color: Colors.white,
-//                   shape: BoxShape.circle,
-//                 ),
-//                 child: Icon(
-//                   Icons.home,
-//                   color: GeneralColors.primaryColor,
-//                   size: 25,
-//                 ),
-//               ),
-//               Container(
-//                 width: Get.width / 7.5,
-//                 height: Get.height / 5,
-//                 decoration: BoxDecoration(
-//                   color: Colors.white,
-//                   shape: BoxShape.circle,
-//                 ),
-//               ),
-//             ],
-//           ),

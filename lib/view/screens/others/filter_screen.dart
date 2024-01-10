@@ -67,7 +67,7 @@ class _FilterScreenState extends State<FilterScreen> {
                   alignment: Alignment.centerLeft,
                   child: Text(
                     'Brands',
-                    style: HomeStyle.categoryTitle.copyWith(fontSize: 15),
+                    style: HomeStyle.categoryTitle.copyWith(fontSize: 13),
                   )),
               FlashSaleCategory(titleCategory: category.obs),
               15.0.height,
@@ -75,7 +75,7 @@ class _FilterScreenState extends State<FilterScreen> {
                   alignment: Alignment.centerLeft,
                   child: Text(
                     'Gender',
-                    style: HomeStyle.categoryTitle.copyWith(fontSize: 15),
+                    style: HomeStyle.categoryTitle.copyWith(fontSize: 13),
                   )),
               FlashSaleCategory(titleCategory: genderCategory.obs),
               15.0.height,
@@ -83,7 +83,7 @@ class _FilterScreenState extends State<FilterScreen> {
                   alignment: Alignment.centerLeft,
                   child: Text(
                     'Sort By',
-                    style: HomeStyle.categoryTitle.copyWith(fontSize: 15),
+                    style: HomeStyle.categoryTitle.copyWith(fontSize: 13),
                   )),
               FlashSaleCategory(titleCategory: sortBy.obs),
               15.0.height,
@@ -92,7 +92,7 @@ class _FilterScreenState extends State<FilterScreen> {
                   alignment: Alignment.centerLeft,
                   child: Text(
                     'Pricing Range',
-                    style: HomeStyle.categoryTitle.copyWith(fontSize: 15),
+                    style: HomeStyle.categoryTitle.copyWith(fontSize: 13),
                   )),
               Obx(
                 () => RangeSlider(

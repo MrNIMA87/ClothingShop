@@ -13,6 +13,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../theme/textStyle/general_style.dart';
+import '../../widgets/general/loading.dart';
 
 class MyCart extends StatefulWidget {
   const MyCart({super.key});
@@ -32,15 +33,16 @@ class _MyCartState extends State<MyCart> {
           preferredSize: const Size.fromHeight(60),
           child: AppBarSinglePage(title: 'My Cart'),
         ),
-        body: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(Dimens.bodyMargin),
-            child: Column(
-              children: [
-                ListItems(numberProduct: numberProduct),
-              ],
-            ),
-          ),
+        body: FutureBuilder(
+          // Simulate a 2-second delay
+          future: Future.delayed(const Duration(seconds: 2)),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return const Loading(); // Show loading widget
+            } else {
+              return  OriginalWidgetMyCartScreen(numberProduct: numberProduct); // Show actual content
+            }
+          },
         ),
         bottomNavigationBar: Padding(
           padding: const EdgeInsets.all(10.0),
@@ -79,6 +81,29 @@ class _MyCartState extends State<MyCart> {
                   ),
                 );
               }),
+        ),
+      ),
+    );
+  }
+}
+
+class OriginalWidgetMyCartScreen extends StatelessWidget {
+  const OriginalWidgetMyCartScreen({
+    super.key,
+    required this.numberProduct,
+  });
+
+  final RxInt numberProduct;
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.all(Dimens.bodyMargin),
+        child: Column(
+          children: [
+            ListItems(numberProduct: numberProduct),
+          ],
         ),
       ),
     );
@@ -151,7 +176,7 @@ class SuccessFul extends StatelessWidget {
                       child: ButtonSign(
                           title: 'OK',
                           onPressed: () {
-                            Get.offAll(() => MainScreen());
+                            Get.offAll(() => const MainScreen());
                             myCartProducts.clear();
                           }),
                     )
@@ -203,13 +228,13 @@ class Prices extends StatelessWidget {
         children: [
           Text(
             title,
-            style: GeneralTextStyle.hint.copyWith(fontSize: 14),
+            style: GeneralTextStyle.hint.copyWith(fontSize: 13),
           ),
           Text(
             '\$ ${price.toString()}',
             style: const TextStyle(
               color: Colors.black,
-              fontSize: 15,
+              fontSize: 13.5,
               fontWeight: FontWeight.w500,
             ),
           ),
@@ -230,7 +255,7 @@ class ApplyPromoCode extends StatelessWidget {
       children: [
         Container(
           padding: const EdgeInsets.only(left: 15),
-          width: Get.width / 1.5,
+          width: Get.width / 1.54,
           height: Get.height / 16,
           decoration: BoxDecoration(
             border: Border.all(
@@ -252,6 +277,7 @@ class ApplyPromoCode extends StatelessWidget {
             ),
           ),
         ),
+        5.0.width,
         Container(
           width: 80,
           height: Get.height / 20,
@@ -262,7 +288,7 @@ class ApplyPromoCode extends StatelessWidget {
           child: Center(
             child: Text(
               'Apply',
-              style: GeneralTextStyle.textButton.copyWith(fontSize: 18),
+              style: GeneralTextStyle.textButton.copyWith(fontSize: 14),
             ),
           ),
         ),

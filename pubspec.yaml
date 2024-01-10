@@ -51,11 +51,14 @@ dependencies:
   flutter_expandable_widget: ^1.0.5
   flutter_contacts: ^1.1.7+1
   onboarding: ^3.1.0
-  
+  shimmer: ^3.0.0
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
+ 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your

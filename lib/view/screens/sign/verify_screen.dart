@@ -38,7 +38,7 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
                   width: 50,
                   height: 50,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(1000),
+                    shape: BoxShape.circle,
                     border: Border.all(
                       color: const Color.fromARGB(88, 158, 158, 158),
                       width: 1.5,

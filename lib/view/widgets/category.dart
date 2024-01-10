@@ -19,18 +19,18 @@ class Category extends StatelessWidget {
         Container(
           width: Get.width / 8,
           height: Get.height / 15,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(1000),
-            color: const Color.fromARGB(255, 247, 242, 237),
+          decoration: const BoxDecoration(
+            shape: BoxShape.circle,
+            color: Color.fromARGB(255, 247, 242, 237),
           ),
           child: Center(
             child: ImageIcon(
               icon,
-              color: GeneralColors.primaryColor,size: Get.height / 25,
+              color: GeneralColors.primaryColor,size: Get.height / 29,
             ),
           ),
         ),
-        7.0.height,
+        5.0.height,
         Text(
           title,
           style: HomeStyle.categoryTitle,

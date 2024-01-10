@@ -11,7 +11,7 @@ class SignInStyle {
 
   static const TextStyle titleTextField = TextStyle(
     fontFamily: 'Avenir_Regular',
-    fontSize: 15,
+    fontSize: 14,
     fontWeight: FontWeight.w500,
     color: Colors.black,
   );

@@ -1,4 +1,8 @@
+import 'package:clothing_shop/view/screens/mainScreens/main_screen.dart';
 import 'package:clothing_shop/view/screens/others/splash_screen.dart';
+import 'package:clothing_shop/view/screens/sign/sign_in.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/adapters.dart';
 
 import 'theme/colors/general_colors.dart';
 import "package:clothing_shop/theme/themes.dart";
@@ -9,6 +13,7 @@ import 'package:get_storage/get_storage.dart';
 
 void main() async {
   await GetStorage.init();
+  await Hive.initFlutter();
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       statusBarIconBrightness: Brightness.dark,
@@ -29,7 +34,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: AppThemes.themeData,
-      home: const SplashScreen(),
+      home: SignIn(),
     );
   }
 }

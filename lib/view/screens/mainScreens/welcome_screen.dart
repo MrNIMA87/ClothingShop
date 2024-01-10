@@ -66,7 +66,7 @@ class WelcomeScreen extends StatelessWidget {
                         height: Get.height / 5.4,
                         width: Get.width / 2.8,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(1000),
+                          shape: BoxShape.circle,
                           image: DecorationImage(
                             image: AssetImage(Assets.images.welcome3.path),
                             fit: BoxFit.cover,

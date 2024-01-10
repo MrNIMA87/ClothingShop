@@ -8,7 +8,7 @@ import 'package:clothing_shop/theme/textStyle/home_style.dart';
 import 'package:clothing_shop/theme/textStyle/single_product_style.dart';
 import 'package:clothing_shop/view/widgets/notifications/successful_notification.dart';
 
-import 'package:clothing_shop/view/widgets/single_product_category.dart';
+import 'package:clothing_shop/view/widgets/single_category.dart';
 import 'package:expandable_text/expandable_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -138,7 +138,7 @@ class SingleProduct extends StatelessWidget {
                       style: SingleProductStyle.title,
                     ),
                   ),
-                  (Dimens.bodyMargin * 2).height,
+                  (Dimens.bodyMargin * 1.8).height,
                   const Align(
                     alignment: Alignment.centerLeft,
                     child: Text(

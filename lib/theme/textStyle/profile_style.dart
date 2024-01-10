@@ -5,14 +5,14 @@ import '../colors/general_colors.dart';
 class ProfileStyle {
   static const TextStyle name = TextStyle(
     fontFamily: 'Avenir_Regular',
-    fontSize: 15,
+    fontSize: 14,
     fontWeight: FontWeight.w600,
     color: Colors.black87,
   );
   static const TextStyle titleList = TextStyle(
     fontFamily: 'Avenir_Regular',
-    fontSize: 13,
-    fontWeight: FontWeight.w500,
+    fontSize: 12,
+    fontWeight: FontWeight.w600,
     color: Colors.black87,
   );
   static const TextStyle selectedTopCategory = TextStyle(

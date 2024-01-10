@@ -5,13 +5,13 @@ import '../colors/general_colors.dart';
 class HomeStyle {
   static const TextStyle title = TextStyle(
     fontFamily: 'Avenir_Regular',
-    fontSize: 17,
+    fontSize: 16,
     fontWeight: FontWeight.w600,
     color: Colors.black87,
   );
   static const TextStyle categoryTitle = TextStyle(
     fontFamily: 'Avenir_Regular',
-    fontSize: 11,
+    fontSize: 10,
     fontWeight: FontWeight.w700,
     color: Colors.black87,
   );
@@ -42,7 +42,7 @@ class HomeStyle {
   static const TextStyle seeAll = TextStyle(
     color: GeneralColors.primaryColor,
     fontFamily: 'Avenir_Regular',
-    fontSize: 13,
+    fontSize: 12,
     fontWeight: FontWeight.w700,
   );
   static const TextStyle timerTitle = TextStyle(

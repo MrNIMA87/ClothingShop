@@ -5,20 +5,20 @@ import '../colors/general_colors.dart';
 class SingleProductStyle {
   static const TextStyle title = TextStyle(
     fontFamily: 'Avenir_Regular',
-    fontSize: 18,
+    fontSize: 17,
     fontWeight: FontWeight.bold,
     color: Colors.black,
   );
   static const TextStyle titleInfo = TextStyle(
     fontFamily: 'Avenir_Regular',
-    fontSize: 16,
+    fontSize: 15,
     fontWeight: FontWeight.bold,
     color: Colors.black,
   );
   static const TextStyle info = TextStyle(
     fontFamily: 'Avenir_Regular',
-    fontSize: 13,
-    fontWeight: FontWeight.bold,
+    fontSize: 11,
+    fontWeight: FontWeight.w600,
     color: GeneralColors.hint,
     wordSpacing: 1,
     height: 1.2,
